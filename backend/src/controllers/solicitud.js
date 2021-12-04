@@ -13,10 +13,9 @@ export const getSolicitud = async (req, res) =>{
 }
 export const getSolicitudCount =  async (req, res) =>{
     const conexion = await connect();
-    const[filas]= await conexion.query('SELECT COUNT(*) FROM solicitud_deportiva');
-    res.json(filas[0]);
-    console.log("hello world!")
-    res.send('hello world !')
+    const[filas]= await conexion.query("SELECT COUNT(*) FROM solicitud_deportiva");
+    console.log(filas)
+    res.json(filas[0]["COUNT(*)"]);
 }
 export const saveSolicitud = async (req,res) =>{
     res.send('hello world !')

@@ -1,6 +1,6 @@
 import { Router } from "express";
 //express sirve para crear rutas
-import {getSolicitudes,getSolicitud,getSolicitudCount,saveSolicitud,deleteSolicitud,updateSolicitud} from "../controllers/solicitud"
+import {getSolicitudes,getSolicitud,getSolicitudCount,crearSolicitud,eliminarSolicitud,modificarSolicitud} from "../controllers/solicitud"
 
 const router = Router();
 
@@ -10,10 +10,10 @@ router.get('/solicitud/count',getSolicitudCount)
 
 router.get('/solicitud/:id',getSolicitud)
 
-router.post('/solicitud',saveSolicitud)
+router.post('/solicitud',crearSolicitud)
  
-router.delete('/solicitud',deleteSolicitud)
+router.delete('/solicitud/:id',eliminarSolicitud)
 
-router.put('/solicitud',updateSolicitud)
+router.put('/solicitud/:id',modificarSolicitud)
 
 export default router

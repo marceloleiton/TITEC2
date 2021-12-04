@@ -7,3 +7,26 @@ GET {{api}}/1
 
 ###
 GET {{api}}/count
+
+###
+POST {{api}}
+Content-Type: application/json
+
+{
+  "id_solicitud": null,
+  "rut_postulante": "14.222.313-3",
+  "codigo_actividad": 1,
+  "fecha_inscripcion": "2021-12-01",
+  "datos_extra": "necesito una polera L",
+  "obs_medica": "ninguna observacion"
+}
+###
+DELETE {{api}}/2
+
+###
+PUT {{api}}/1
+Content-Type: application/json
+
+{
+  "datos_extra": "actualize esto :V"
+}

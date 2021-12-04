@@ -1,0 +1,9 @@
+@api = http://localhost:3000/solicitud
+
+GET {{api}} 
+
+###
+GET {{api}}/1
+
+###
+GET {{api}}/count

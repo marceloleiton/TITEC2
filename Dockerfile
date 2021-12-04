@@ -5,8 +5,9 @@ RUN apt-get update && \
   curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
   apt-get install -y nodejs
 
-COPY ./Client /home/
+COPY ./backend /home/
 WORKDIR /home
 
-RUN npm install && npm install -g expo-cli
+RUN npm i express mysql2 morgan cors swagger-jsdoc swagger-ui-express dotenv 
+RUN npm i nodemon @babel/core @babel/cli @babel/preset-env @babel/node -D
 CMD [ "npm", "start" ]

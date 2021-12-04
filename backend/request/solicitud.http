@@ -17,14 +17,14 @@ Content-Type: application/json
   "rut_postulante": "14.222.313-3",
   "codigo_actividad": 1,
   "fecha_inscripcion": "2021-12-01",
-  "datos_extra": "necesito una polera L",
+  "datos_extra": "Nueva solicitud",
   "obs_medica": "ninguna observacion"
 }
 ###
-DELETE {{api}}/2
+DELETE {{api}}/6
 
 ###
-PUT {{api}}/1
+PUT {{api}}/6
 Content-Type: application/json
 
 {

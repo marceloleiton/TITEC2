@@ -14,7 +14,6 @@ export const getSolicitud = async (req, res) =>{
 export const getSolicitudCount =  async (req, res) =>{
     const conexion = await connect();
     const[filas]= await conexion.query("SELECT COUNT(*) FROM solicitud_deportiva");
-    //console.log(filas)
     res.json(filas[0]["COUNT(*)"]);
 }
 export const crearSolicitud = async (req,res) =>{
@@ -26,19 +25,16 @@ export const crearSolicitud = async (req,res) =>{
          ...req.body,
      });
 }
-
 export const eliminarSolicitud = async(req,res) =>{
     const conexion = await connect();
     await conexion.query('DELETE FROM solicitud_deportiva WHERE id_solicitud = ?',[req.params.id,]);
     res.sendStatus(204);
 }
-
 export const modificarSolicitud = async (req,res) =>{
     const conexion = await connect();
-    const resultado= await conexion.query('UPDATE solicitud_deportiva SET ? WHERE id_solicitud = ?',[
+    await conexion.query('UPDATE solicitud_deportiva SET ? WHERE id_solicitud = ?',[
         req.body,
         req.params.id
     ]);
-    console.log(resultado);
     res.sendStatus(204);
 }

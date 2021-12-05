@@ -9,3 +9,18 @@ To run your project, navigate to the directory and run one of the following yarn
 - yarn android
 - yarn ios
 - yarn web
+
+- expo start 
+- npm start
+
+instalar: 
+
+npm install @react-navigation/native
+
+expo install react-native-screens react-native-safe-area-context
+
+npm install @react-navigation/native-stack
+----------------------------------------------------------
+yarn add react-native-vector-icons
+----------------------------------------------------------
+npm i react-native-gesture-handler #dudoso

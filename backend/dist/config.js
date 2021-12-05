@@ -4,10 +4,16 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.config = void 0;
+
+var _dotenv = require("dotenv");
+
+//dotenv lee las variables de entorno 
+(0, _dotenv.config)();
 var config = {
-  host: 'localhost',
-  user: 'root',
-  password: 'proy04',
-  database: 'titec1bd'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  port: process.env.DB_PORT
 };
 exports.config = config;

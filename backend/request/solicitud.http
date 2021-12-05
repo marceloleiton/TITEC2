@@ -21,7 +21,7 @@ Content-Type: application/json
   "obs_medica": "ninguna observacion"
 }
 ###
-DELETE {{api}}/6
+DELETE {{api}}/10
 
 ###
 PUT {{api}}/6

@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.connect = void 0;
+
 var _promise = _interopRequireDefault(require("mysql2/promise"));
 
 var _config = require("./config");
@@ -12,7 +17,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var connect = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var conn, result;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -21,15 +25,9 @@ var connect = /*#__PURE__*/function () {
             return _promise["default"].createConnection(_config.config);
 
           case 2:
-            conn = _context.sent;
-            _context.next = 5;
-            return conn.query('select * from persona');
+            return _context.abrupt("return", _context.sent);
 
-          case 5:
-            result = _context.sent;
-            console.log(result);
-
-          case 7:
+          case 3:
           case "end":
             return _context.stop();
         }
@@ -42,4 +40,4 @@ var connect = /*#__PURE__*/function () {
   };
 }();
 
-connect();
+exports.connect = connect;

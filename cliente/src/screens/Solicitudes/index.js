@@ -19,10 +19,9 @@ const SolicitudesScreen = props => {
   return (
     <View>
         <Text style={styles.title}>Estado solicitud</Text>
-        <SolicitudList solicitud = {solicitud}/>
+        <SolicitudList/>
     </View>
   );
 };
-
 
 export default SolicitudesScreen;

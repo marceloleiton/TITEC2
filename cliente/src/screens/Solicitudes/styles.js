@@ -20,8 +20,7 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0, 0, 0, 0.55)',
     textShadowColor: 'rgba(0, 0, 0, 0.95)',
     textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 1,
-    
+    textShadowRadius: 1
   },
   button: {
     backgroundColor: '#fff',

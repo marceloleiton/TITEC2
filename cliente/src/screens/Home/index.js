@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {View,Text} from 'react-native';
 import styles from './styles';
-import SolicitudList from '../../components/SolicitudList';
+import EventoList from '../../components/EventoList';
 import {getEventos} from './../../../api'
 
 const HomeScreen = props => {
@@ -19,7 +19,7 @@ const HomeScreen = props => {
   return (
     <View>
         <Text style={styles.title}>Eventos Quintero</Text>
-        <SolicitudList solicitud = {solicitud}/>
+        <EventoList solicitud = {solicitud}/>
     </View>
   );
 };

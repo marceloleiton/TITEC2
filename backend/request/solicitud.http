@@ -1,15 +1,15 @@
-@api = http://localhost:3000/solicitud
+@api = http://localhost:3000/respuesta
 
-GET {{api}} 
-
-###
-GET {{api}}/1
+GET {{api}}/solicitudes 
 
 ###
-GET {{api}}/count
+GET {{api}}/solicitudes/1
 
 ###
-POST {{api}}
+GET {{api}}/solicitudes/count
+
+###
+POST {{api}}/solicitud
 Content-Type: application/json
 
 {
@@ -21,10 +21,10 @@ Content-Type: application/json
   "obs_medica": "ninguna observacion"
 }
 ###
-DELETE {{api}}/9
+DELETE {{api}}/solicitud/10
 
 ###
-PUT {{api}}/6
+PUT {{api}}/solicitud/6
 Content-Type: application/json
 
 {

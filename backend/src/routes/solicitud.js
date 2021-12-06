@@ -23,7 +23,7 @@ const router = Router();
  *      summary: Obtiene todas las solicitudes
  *      tags: [Solicitud]
  */
-router.get('/solicitud',getSolicitudes)
+router.get('/respuesta/solicitudes',getSolicitudes)
 
 /**
  * @swagger
@@ -32,7 +32,7 @@ router.get('/solicitud',getSolicitudes)
  *      summary: Obtiene un conteo de todas las solicitudes
  *      tags: [Solicitud]
  */
-router.get('/solicitud/count',getSolicitudCount)
+router.get('/respuesta/solicitudes/count',getSolicitudCount)
 
 /**
  * @swagger
@@ -41,7 +41,7 @@ router.get('/solicitud/count',getSolicitudCount)
  *      summary: Obtiene una solicitud en específico
  *      tags: [Solicitud]
  */
-router.get('/solicitud/:id',getSolicitud)
+router.get('/respuesta/solicitudes/:id',getSolicitud)
 
 /**
  * @swagger
@@ -50,7 +50,7 @@ router.get('/solicitud/:id',getSolicitud)
  *      summary: Crea una solicitud
  *      tags: [Solicitud]
  */
-router.post('/solicitud',crearSolicitud)
+router.post('/respuesta/solicitud',crearSolicitud)
 
 /**
  * @swagger
@@ -59,7 +59,7 @@ router.post('/solicitud',crearSolicitud)
  *      summary: Elimina una solicitud en específico
  *      tags: [Solicitud]
  */
-router.delete('/solicitud/:id',eliminarSolicitud)
+router.delete('/respuesta/solicitud/:id',eliminarSolicitud)
 
 /**
  * @swagger
@@ -68,6 +68,6 @@ router.delete('/solicitud/:id',eliminarSolicitud)
  *      summary: Modifica una solicitud en específico
  *      tags: [Solicitud]
  */
-router.put('/solicitud/:id',modificarSolicitud)
+router.put('/respuesta/solicitud/:id',modificarSolicitud)
 
 export default router

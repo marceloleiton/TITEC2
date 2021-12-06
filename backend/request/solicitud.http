@@ -1,12 +1,18 @@
 @api = http://localhost:3000/respuesta
 
 GET {{api}}/solicitudes 
+###
+GET {{api}}/eventos 
 
 ###
 GET {{api}}/solicitudes/1
+###
+GET {{api}}/eventos/1
 
 ###
 GET {{api}}/solicitudes/count
+###
+GET {{api}}/eventos/count
 
 ###
 POST {{api}}/solicitud
@@ -20,6 +26,26 @@ Content-Type: application/json
   "datos_extra": "Nueva solicitud",
   "obs_medica": "ninguna observacion"
 }
+###
+POST {{api}}/evento
+Content-Type: application/json
+
+{
+  "codigo_actividad": 4,
+  "rut_responsable": "17.333.222-2",
+  "tipo": "Taller",
+  "cupos": 40,
+  "direccion": "Av. Argleton Bar´s",
+  "nombre_actividad": "Basquetbol",
+  "estado_actividad": "Postulando",
+  "descripción": "Este taller se realiza en el unico lugar deportivo de chile",
+  "fecha_inicio": "2022-03-03T03:00:00.000Z",
+  "fecha_termino": "2022-04-04T04:00:00.000Z",
+  "modalidad": "Presencial",
+  "requisitos": "Tener gorra de baño, mascarilla y sufles",
+  "area": "Natacion"
+}
+
 ###
 DELETE {{api}}/solicitud/10
 

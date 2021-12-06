@@ -10,15 +10,18 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 50,
+    fontSize: 25,
+    backgroundColor: 'gray',
     fontWeight: 'bold',
-    color: 'white',
-    width: '70%',
-    marginLeft: 10,
-
+    height: '6%',
+    color: '#fff',
+    width: '100%',
+    textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.55)',
     textShadowColor: 'rgba(0, 0, 0, 0.95)',
-    textShadowOffset: {width: -2, height: 2},
-    textShadowRadius: 25,
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 1,
+    
   },
   button: {
     backgroundColor: '#fff',

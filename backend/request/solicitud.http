@@ -31,7 +31,7 @@ POST {{api}}/evento
 Content-Type: application/json
 
 {
-  "codigo_actividad": 4,
+  "codigo_actividad": null,
   "rut_responsable": "17.333.222-2",
   "tipo": "Taller",
   "cupos": 40,

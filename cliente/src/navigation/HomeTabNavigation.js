@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/Home';
-
+import  SolicitudesScreen from '../screens/Solicitudes';
 const Tab = createBottomTabNavigator();
 
 const HomeTabNavigation = props => {
@@ -15,6 +15,13 @@ const HomeTabNavigation = props => {
         component={HomeScreen} 
         options={{
         headerShown: false,
+        }} />
+        
+        <Tab.Screen 
+        name="Eventos deportivos" 
+        component={SolicitudesScreen} 
+        options={{
+        headerShown: true,
         }} />
 
       </Tab.Navigator>

@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeScreen from '../screens/Home';
+import SolicitudesScreen from '../screens/Solicitudes';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text, View , StatusBar} from 'react-native';
@@ -25,7 +26,7 @@ const Routes = props => {
               }
               return <Ionicons name={iconName} size={35} color={color} />;
             },
-            tabBarActiveTintColor: '#337ab7',
+            tabBarActiveTintColor: '#1259F5',
             tabBarInactiveTintColor: 'gray',
           })}
         >
@@ -39,7 +40,7 @@ const Routes = props => {
   
           <Tab.Screen 
           name="Solicitudes" 
-          component={HomeScreen} 
+          component={SolicitudesScreen} 
           options={{
           headerShown: false,
           }} />

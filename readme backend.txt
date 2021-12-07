@@ -13,6 +13,7 @@ backend/npm i nodemon @babel/core @babel/cli @babel/preset-env @babel/node -D
 ######################################################################################################
 
 docker run --name=mysql-bd -e MYSQL_ROOT_PASSWORD=root -p 3307:3306 -d mysql
+
 docker exec -it mysql-bd mysql -u root -proot
 
 UPDATE mysql.user SET Password=PASSWORD('root') WHERE User='root';
@@ -37,3 +38,5 @@ grant all privileges on *.* to titec1@localhost with grant option;
 
 
 INSERT INTO `solicitud_deportiva` VALUES ('1','13.231.412-2','1','2021-12-01','necesito una polera XL','ninguna observacion');
+
+ALTER TABLE solicitud_deportiva ADD estado enum('aceptada','pendiente','rechazada') DEFAULT 'pendiente';

@@ -4,6 +4,8 @@ import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 
+import FormSolicitudScreen from '../../screens/FormSolicitud';
+
 const Evento = (props) => {
   
   const navigation = useNavigation();
@@ -20,9 +22,9 @@ const Evento = (props) => {
     imageURL = require("../../../assets/images/natacion.jpg")
   
   return (
-
-      <View style={styles.container} >
-      <ImageBackground blurRadius={4} source={imageURL} resizeMode="cover" style={styles.image}>
+      <View style={styles.container}>
+      <View style={styles.cuadro}>
+      <ImageBackground blurRadius={5} source={imageURL} resizeMode="cover" style={styles.image}>
       <Text style={styles.TituloGeneral}>{Evento.nombre_actividad}</Text>
 
       <Text style={styles.description} >
@@ -33,19 +35,19 @@ const Evento = (props) => {
         Cupos: {Evento.cupos}
       </Text>
            
-      <Text style={styles.cupos} >
+      <Text style={styles.requisitos} >
         Requisitos: {Evento.requisitos}
       </Text>
 
       <Pressable
         style={styles.searchButton}
-        onPress={() => navigation.navigate('')}>
+        onPress={() => navigation.navigate('FormSolicitud')}>
         <Ionicons name="ios-calendar" size={20} color={'#1259F5'} />
         <Text style={styles.searchButtonText}> Inscribirse</Text>
       </Pressable>
-
       </ImageBackground>
-    </View>
+      </View>
+      </View>
   );
 };
 

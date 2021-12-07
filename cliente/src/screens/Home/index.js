@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react';
-import {View,Text} from 'react-native';
+import {View,Image} from 'react-native';
 import styles from './styles';
 import EventoList from '../../components/EventoList';
 import {getEventos} from './../../../api'
@@ -18,7 +18,7 @@ const HomeScreen = props => {
 
   return (
     <View>
-        <Text style={styles.title}>Eventos Quintero</Text>
+
         <EventoList solicitud = {solicitud}/>
     </View>
   );

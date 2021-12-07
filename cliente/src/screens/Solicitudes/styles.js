@@ -1,62 +1,60 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  
-  image: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
-    justifyContent: 'center',
+  container: {
+    padding: 20,
+    marginTop: "10%",
+    height: '80%',
+    width: '90%',
+    backgroundColor: 'white',
+    borderRadius:30,
+    marginHorizontal: 20,
+    borderWidth: 1,
+    borderColor: '#1259F5',
+    flexDirection: 'column',
   },
-
   title: {
     fontSize: 25,
-    backgroundColor: 'gray',
-    fontWeight: 'bold',
-    height: '6%',
-    color: '#fff',
+
+    color: 'black',
     width: '100%',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.55)',
-    textShadowColor: 'rgba(0, 0, 0, 0.95)',
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 1
+    textShadowRadius: 1,
   },
-  button: {
+  input:{
+    width: "90%",
+    fontSize: 20,
+    color: "#fff",
+    textAlign: 'center',
     backgroundColor: '#fff',
-    width: 200,
-    height: 40,
-    borderRadius: 10,
-    marginTop: 25,
-    marginBottom: 150,
-    marginLeft: 25,
-    justifyContent: 'center',
+    marginHorizontal: 20,
+    marginVertical: 20,
+    borderWidth: 2,
+    borderColor: '#1259F5',
+    borderRadius: 1,
     alignItems: 'center',
-  },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-
-  searchButton: {
-    backgroundColor: '#fff',
-    height: 55,
-    width: Dimensions.get('screen').width - 20,
-    borderRadius: 30,
-    marginHorizontal: 10,
-    marginLeft: 10,
-    //posible eror aqui
-    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-    top: 25,
-    zIndex: 100,
-    //fin
+    padding: 10,
+    
   },
-  searchButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
+  buttonEnviar:{
+    width: '50%',
+    
+    marginHorizontal: '25%',
+    borderRadius: 5,
+    backgroundColor: '#1259F5',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputText:{
+    fontSize: 15,
+    padding: 10,
+    color: "#fff",
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

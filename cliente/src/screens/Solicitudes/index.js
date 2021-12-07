@@ -1,25 +1,17 @@
-import React,{useEffect, useState} from 'react';
-import {View,Text} from 'react-native';
+import React from 'react';
+import {View,Text,TextInput} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles';
-import SolicitudList from '../../components/SolicitudList';
-import {getEventos} from './../../../api'
 
 const SolicitudesScreen = props => {
 
-    const [solicitud, setSolicitud]= useState([])
-    const cargarSolicitud = async () => {
-        const data = await getEventos()
-        setSolicitud(data)
-    }
-
-    useEffect(() => {
-        cargarSolicitud()
-    }, []);
-
   return (
-    <View>
+    <View style={styles.container}>
         <Text style={styles.title}>Estado solicitud</Text>
-        <SolicitudList/>
+        <TextInput style={styles.input} placeholder="ingrese su RUT" placeholderTextColor="#1259F5"></TextInput>
+        <TouchableOpacity style={styles.buttonEnviar} disabled>
+          <Text style={styles.inputText}>Enviar</Text>
+        </TouchableOpacity>
     </View>
   );
 };

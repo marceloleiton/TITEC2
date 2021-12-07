@@ -1,6 +1,7 @@
 import React from 'react'
-import {Text ,FlatList} from 'react-native'
+import {FlatList} from 'react-native'
 import Evento from  './eventos';
+
 const EventoList = ({solicitud}) => {
     return (
         <FlatList

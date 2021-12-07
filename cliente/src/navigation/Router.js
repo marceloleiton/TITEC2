@@ -3,16 +3,13 @@ import HomeScreen from '../screens/Home';
 import SolicitudesScreen from '../screens/Solicitudes';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text, View , StatusBar} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
 
 const Tab = createBottomTabNavigator();
 
 const Routes = props => {
     return (
       <NavigationContainer>
-  
         <Tab.Navigator 
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size}) => {
@@ -28,21 +25,25 @@ const Routes = props => {
             },
             tabBarActiveTintColor: '#1259F5',
             tabBarInactiveTintColor: 'gray',
-          })}
-        >
+          })}>
   
           <Tab.Screen 
           name="Eventos" 
           component={HomeScreen} 
           options={{
-          headerShown: false,
+          headerStyle: { backgroundColor: '#1259F5'},
+          headerTitleStyle: { color: 'white'},
+          headerTitle: 'Eventos corp Municipal Quintero',
           }} />
+          
   
           <Tab.Screen 
           name="Solicitudes" 
           component={SolicitudesScreen} 
           options={{
-          headerShown: false,
+          headerStyle: { backgroundColor: '#1259F5'},
+          headerTitleStyle: { color: 'white'},
+          headerTitle: 'Solicitudes',
           }} />
   
         </Tab.Navigator>

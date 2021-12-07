@@ -1,16 +1,19 @@
 @api = http://localhost:3000/respuesta
 
 GET {{api}}/solicitudes 
+
 ###
 GET {{api}}/eventos 
 
 ###
-GET {{api}}/solicitudes/1
+GET {{api}}/solicitudes/12
+
 ###
 GET {{api}}/eventos/1
 
 ###
 GET {{api}}/solicitudes/count
+
 ###
 GET {{api}}/eventos/count
 
@@ -26,6 +29,7 @@ Content-Type: application/json
   "datos_extra": "Nueva solicitud",
   "obs_medica": "ninguna observacion"
 }
+
 ###
 POST {{api}}/evento
 Content-Type: application/json

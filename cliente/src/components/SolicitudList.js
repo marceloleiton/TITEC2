@@ -1,11 +1,11 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import {Text ,View} from 'react-native'
 
 const SolicitudList = () => {
     return (
-        
+        <View> 
             <Text>Ingrese rut</Text>
-            
+        </View>
     )
 }
 

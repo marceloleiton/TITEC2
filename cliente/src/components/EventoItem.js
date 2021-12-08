@@ -1,9 +1,9 @@
 import React from 'react';
-import {Text, ImageBackground,TouchableOpacity} from 'react-native';
+import {Text, ImageBackground,TouchableOpacity,Pressable} from 'react-native';
 import styles from './Eventostyles';
-
+import {useNavigation} from '@react-navigation/native';
 const Evento = (props) => {
-  
+  const navigation = useNavigation();
   const Evento = props.evento;
 
   let imageURL = "";
@@ -23,12 +23,11 @@ const Evento = (props) => {
       <Text style={styles.description} >{Evento.descripción}</Text>
       <Text style={styles.cupos} >Cupos: {Evento.cupos}</Text>
       <Text style={styles.requisitos} >Requisitos: {Evento.requisitos}</Text>
-    
-      <TouchableOpacity style={styles.searchButton} onPress={() => console.log(Evento.codigo_actividad)}>
-        <Text style={styles.searchButtonText}> Inscribirse</Text>
-        
-      </TouchableOpacity>
-      
+      <Pressable
+        style={styles.searchButton}
+        onPress={() => navigation.navigate('Form')}>
+        <Text style={styles.searchButtonText}>inscribirse</Text>
+      </Pressable>
       </ImageBackground>
  
   );

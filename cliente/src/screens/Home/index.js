@@ -1,11 +1,12 @@
 import React,{useEffect, useState} from 'react';
-import {View,Image} from 'react-native';
+import {View,Image,Pressable,Text} from 'react-native';
 import styles from './styles';
 import EventoList from '../../components/EventoList';
 import {getEventos} from './../../../api'
+import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = props => {
-
+  const navigation = useNavigation();
     const [evento, setEvento]= useState([])
     const cargarEvento = async () => {
         const data = await getEventos()

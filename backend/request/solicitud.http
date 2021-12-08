@@ -51,7 +51,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{api}}/solicitud/10
+DELETE {{api}}/solicitud/14
 
 ###
 PUT {{api}}/solicitud/6

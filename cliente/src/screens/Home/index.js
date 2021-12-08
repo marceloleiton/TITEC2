@@ -12,7 +12,7 @@ const HomeScreen = props => {
         const data = await getEventos()
         setEvento(data)
     }
-
+    
     useEffect(() => {
       cargarEvento()
     }, []);

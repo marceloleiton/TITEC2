@@ -22,6 +22,9 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     borderColor: 'lightgrey',
     textShadowRadius: 5,
+    marginBottom:10,
+    marginHorizontal: 10,
+    marginTop: 10,
     
   },
   TituloGeneral: {

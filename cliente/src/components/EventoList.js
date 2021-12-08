@@ -1,11 +1,11 @@
 import React from 'react'
 import {FlatList} from 'react-native'
-import Evento from  './eventos';
+import Evento from  './EventoItem';
 
-const EventoList = ({solicitud}) => {
+const EventoList = ({evento}) => {
     return (
         <FlatList
-            data={solicitud}
+            data={evento}
             keyExtractor={(item) => item.codigo_actividad + ' '}
             renderItem={({item}) => <Evento evento={item} />} />
     );

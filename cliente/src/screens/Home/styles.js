@@ -1,14 +1,14 @@
 import {StyleSheet,Dimensions} from 'react-native';
 
 const styles = StyleSheet.create({
-  container:{backgroundColor: '#33a531'},
+  container:{
+    backgroundColor: '#33a531',
+    height:'100%'
+  },
   cuadro: {
-    margin: 10,
-    marginBottom: 15,
     flex: 1,
     textShadowColor: 'rgba(0, 0, 0, 0.90)',
     textShadowOffset: {width: -1, height: 1},
-  
   },
   title: {
     fontSize: 25,

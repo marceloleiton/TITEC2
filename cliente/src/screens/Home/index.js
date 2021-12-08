@@ -6,20 +6,22 @@ import {getEventos} from './../../../api'
 
 const HomeScreen = props => {
 
-    const [solicitud, setSolicitud]= useState([])
-    const cargarSolicitud = async () => {
+    const [evento, setEvento]= useState([])
+    const cargarEvento = async () => {
         const data = await getEventos()
-        setSolicitud(data)
+        setEvento(data)
     }
 
     useEffect(() => {
-        cargarSolicitud()
+      cargarEvento()
     }, []);
 
   return (
-    <View>
 
-        <EventoList solicitud = {solicitud}/>
+    <View style={styles.container}>
+    <View style={styles.cuadro}>
+        <EventoList evento = {evento}/>
+    </View>
     </View>
   );
 };

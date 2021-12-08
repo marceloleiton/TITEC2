@@ -22,7 +22,7 @@ export const getSolicitud = async (req, res) =>{
 export const getEvento = async (req, res) =>{
     //podríamos hacer la excepción en caso de no existir ese id
     const conexion = await connect();
-    const[filas]= await conexion.query('SELECT * FROM actividades WHERE  WHERE codigo_actividad = ?',[req.params.id,]);
+    const[filas]= await conexion.query('SELECT * FROM actividades WHERE codigo_actividad = ?',[req.params.id,]);
     res.json(filas[0]);
 }
 

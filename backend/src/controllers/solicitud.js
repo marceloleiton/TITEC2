@@ -8,7 +8,7 @@ export const getSolicitudes = async (req, res) =>{
 }
 export const getEventos = async (req, res) =>{
     const conexion = await connect();
-    const[filas]= await conexion.query('SELECT * FROM actividades WHERE tipo="evento" ');
+    const[filas]= await conexion.query('SELECT * FROM actividades ');
     res.json(filas);
 }
 

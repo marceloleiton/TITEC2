@@ -1,22 +1,16 @@
-import React,{useState}  from 'react';
+import React,{useEffect, useState}  from 'react';
 import {View,Images,Text,TextInput} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import SolicitudList from '../../components/SolicitudList';
 import styles from './styles';
+import {getSolicitud} from '../../../api';
 
 const SolicitudesScreen = props => {
-
-  
-    
-  const [solicitud, getSolicitud] = useState({
-    rut_postulante: " ",
-});
-
-const handleChange = (name, value) => getSolicitud({...solicitud, [name]: value });
-
-const handleSubmit = () => {
-    console.log(solicitud)
-    crearSolicitud(solicitud);
-};
+  const [solicitud, setSolicitud]= useState([])
+  const cargarSolicitud = async () => {
+    const data = await getSolicitud()
+    setSolicitud(data)
+}
 
   return (
     <View style={styles.container}>
@@ -27,9 +21,8 @@ const handleSubmit = () => {
             style={styles.input} 
             placeholder="RUT" 
             placeholderTextColor="grey" 
-            onChangeText={(text)=> handleChange('rut_postulante',text)}
             />
-        <TouchableOpacity style={styles.buttonEnviar} onPress={handleSubmit}>
+        <TouchableOpacity style={styles.buttonEnviar}>
           <Text style={styles.inputText}>INGRESAR</Text>
         </TouchableOpacity>
         </View>

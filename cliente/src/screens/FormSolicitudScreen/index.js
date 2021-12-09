@@ -3,7 +3,6 @@ import { Text,View,TextInput,TouchableOpacity } from 'react-native';
 import styles from './styles';
 import {crearSolicitud} from '../../../api';
 
-
 const FormSolicitudScreen = ({navigation}) => {
 
     const [solicitud, setSolicitud] = useState({

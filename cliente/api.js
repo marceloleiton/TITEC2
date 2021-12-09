@@ -1,6 +1,7 @@
 const APIsolicitudes = 'http://10.0.2.2:3000/respuesta/solicitudes'
-const APIsolicitud = 'http://10.0.2.2:3000/respuesta/solicitud'
+const APIsolicitud = 'http://10.0.2.2:3000/respuesta/solicitud/'
 const APIeventos = 'http://10.0.2.2:3000/respuesta/eventos'
+const APIevento = 'http://10.0.2.2:3000/respuesta/evento'
 
 export const getSolicitudes = async () =>{
     const res = await fetch(APIsolicitudes)
@@ -21,4 +22,13 @@ export const crearSolicitud = async (newSolicitud) =>{
         body: JSON.stringify(newSolicitud)
     });
     return await res.json();
+};
+
+export const getSolicitud = async () =>{
+    const res = await fetch(APIsolicitud,{
+        method: "GET",
+        headers: {  
+            "Content-Type": "application/json"}
+    })
+    return await res.json()
 };

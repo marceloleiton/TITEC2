@@ -9,12 +9,16 @@ const Evento = (props) => {
   let imageURL = "";
 
   // Condiciones para el fondo en los talleres
-  if (Evento.nombre_actividad === "Futbol" || Evento.nombre_actividad === "Fútbol")
+  if (Evento.nombre_actividad === "Futbol" || Evento.nombre_actividad === "Fútbol" || Evento.nombre_actividad === "fútbol" || Evento.nombre_actividad === "futbol")
     imageURL = require("../../assets/images/futbol.jpg")
-  else if (Evento.nombre_actividad === "Basquetbol" || Evento.nombre_actividad === "basquetbol")
+  else if (Evento.nombre_actividad === "Basquetbol" || Evento.nombre_actividad === "basquetbol" ||Evento.nombre_actividad === "Básquetbol" || Evento.nombre_actividad === "básquetbol")
     imageURL = require("../../assets/images/basquetbol.jpg")
-  else if (Evento.nombre_actividad === "Natacion" || Evento.nombre_actividad === "Natación" )
+  else if (Evento.nombre_actividad === "Natacion" || Evento.nombre_actividad === "Natación" ||Evento.nombre_actividad === "natación" || Evento.nombre_actividad === "natacion" )
     imageURL = require("../../assets/images/natacion.jpg")
+  else if (Evento.nombre_actividad === "Tenis" || Evento.nombre_actividad === "tenis" )
+    imageURL = require("../../assets/images/tenis.jpg")
+  else if (Evento.nombre_actividad === "Maraton" || Evento.nombre_actividad === "maraton" ||Evento.nombre_actividad === "Maratón" || Evento.nombre_actividad === "maratón" )
+    imageURL = require("../../assets/images/maraton.jpg")
   
   return (
 

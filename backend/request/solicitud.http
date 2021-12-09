@@ -6,7 +6,7 @@ GET {{api}}/solicitudes
 GET {{api}}/eventos 
 
 ###
-GET {{api}}/solicitudes/12
+GET {{api}}/solicitud/13.231.412-2
 
 ###
 GET {{api}}/eventos/1
@@ -35,23 +35,28 @@ POST {{api}}/evento
 Content-Type: application/json
 
 {
-  "codigo_actividad": 4,
+  "codigo_actividad": null,
   "rut_responsable": "13.231.412-2",
-  "tipo": "Taller",
+  "tipo": "Evento",
   "cupos": 10,
   "direccion": "Av. Cubo Rubik 123",
-  "nombre_actividad": "Futbol",
+  "nombre_actividad": "Natacion",
   "estado_actividad": "Postulando",
-  "descripción": "Esta actividad se realiza con todos los clubes deportivos de quintero",
+  "descripción": "Este Evento en el club de Quintero",
   "fecha_inicio": "2022-03-03",
   "fecha_termino": "2022-04-04",
   "modalidad": "Presencial",
-  "requisitos": "Tener zapatos de fútbol",
-  "area": "Futbol"
+  "requisitos": "Tener gorro de natación",
+  "area": "Natacion"
 }
+
 
 ###
 DELETE {{api}}/solicitud/14
+
+###
+DELETE {{api}}/evento/1
+
 
 ###
 PUT {{api}}/solicitud/6
@@ -59,4 +64,12 @@ Content-Type: application/json
 
 {
   "datos_extra": "actualize esto :V"
+}
+
+###
+PUT {{api}}/evento/8
+Content-Type: application/json
+
+{
+  "nombre_actividad": "Natación"
 }

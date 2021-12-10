@@ -25,10 +25,7 @@ export const crearSolicitud = async (newSolicitud) =>{
 };
 
 export const getSolicitud = async () =>{
-    const res = await fetch(APIsolicitud,{
-        method: "GET",
-        headers: {  
-            "Content-Type": "application/json"}
-    })
+    await fetch(`${APIsolicitud}/${id}`,{method: "GET",
+    });
     return await res.json()
 };

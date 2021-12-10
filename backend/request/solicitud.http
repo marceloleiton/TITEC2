@@ -40,14 +40,14 @@ Content-Type: application/json
   "tipo": "Evento",
   "cupos": 10,
   "direccion": "Av. Cubo Rubik 123",
-  "nombre_actividad": "Natacion",
+  "nombre_actividad": "Basquetbol",
   "estado_actividad": "Postulando",
   "descripción": "Este Evento en el club de Quintero",
   "fecha_inicio": "2022-03-03",
   "fecha_termino": "2022-04-04",
   "modalidad": "Presencial",
-  "requisitos": "Tener gorro de natación",
-  "area": "Natacion"
+  "requisitos": "Tener zapatillas",
+  "area": "Basquetbol"
 }
 
 

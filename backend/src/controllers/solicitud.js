@@ -8,7 +8,7 @@ export const getSolicitudes = async (req, res) =>{
 }
 export const getEventos = async (req, res) =>{
     const conexion = await connect();
-    const[filas]= await conexion.query('SELECT * FROM actividades WHERE tipo="Evento" ');
+    const[filas]= await conexion.query('SELECT * , DATE_FORMAT(fecha_inicio, "%d-%m-%Y") AS fecha_inicio ,  DATE_FORMAT(fecha_termino, "%d-%m-%Y") AS fecha_termino FROM actividades WHERE tipo="Evento" ');
     res.json(filas);
 }
 
@@ -61,7 +61,7 @@ export const crearEvento = async (req,res) =>{
 
 export const eliminarSolicitud = async(req,res) =>{
     const conexion = await connect();
-    await conexion.query('DELETE FROM solicitud_deportiva WHERE tipo="Evento" AND id_solicitud = ?',[req.params.id,]);
+    await conexion.query('DELETE FROM solicitud_deportiva WHERE id_solicitud = ?',[req.params.id,]);
     res.sendStatus(204);
 }
 

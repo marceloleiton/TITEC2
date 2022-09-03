@@ -4,17 +4,13 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import SolicitudList from '../../components/SolicitudList';
 import styles from './styles';
 import {getSolicitud} from '../../../api';
-import Evento from  '../../components/EventoItem';
 
-const SolicitudesScreen = ({evento}) => {
+const SolicitudesScreen = props => {
   const [solicitud, setSolicitud]= useState([])
-  
   const cargarSolicitud = async () => {
     const data = await getSolicitud()
     setSolicitud(data)
 }
-
-
 
   return (
     <View style={styles.container}>

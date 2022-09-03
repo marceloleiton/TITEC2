@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "babel src -d dist",
@@ -26,5 +25,6 @@
     "@babel/node": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "nodemon": "^2.0.15"
-  }
+  },
+  "description": ""
 }

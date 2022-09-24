@@ -39,7 +39,7 @@ CREATE TABLE `actividades` (
   PRIMARY KEY (`codigo_actividad`,`rut_responsable`),
   KEY `rut_responsable` (`rut_responsable`),
   CONSTRAINT `actividades_ibfk_1` FOREIGN KEY (`rut_responsable`) REFERENCES `persona` (`rut`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +88,7 @@ CREATE TABLE `correo` (
   `correo` varchar(100) NOT NULL,
   PRIMARY KEY (`rut`,`correo`),
   CONSTRAINT `correo_ibfk_1` FOREIGN KEY (`rut`) REFERENCES `persona` (`rut`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +132,7 @@ CREATE TABLE `direccion` (
   PRIMARY KEY (`id_direccion`,`rut`),
   KEY `rut` (`rut`),
   CONSTRAINT `direccion_ibfk_1` FOREIGN KEY (`rut`) REFERENCES `persona` (`rut`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,7 @@ CREATE TABLE `direccion_multimedia` (
   `extension_archivo` mediumtext NOT NULL,
   KEY `codigo_actividad` (`codigo_actividad`),
   CONSTRAINT `direccion_multimedia_ibfk_1` FOREIGN KEY (`codigo_actividad`) REFERENCES `actividades` (`codigo_actividad`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,7 +180,7 @@ CREATE TABLE `horarios` (
   `horario` varchar(100) NOT NULL,
   PRIMARY KEY (`codigo_actividad`,`horario`),
   CONSTRAINT `horarios_ibfk_1` FOREIGN KEY (`codigo_actividad`) REFERENCES `actividades` (`codigo_actividad`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -209,7 +209,7 @@ CREATE TABLE `persona` (
   `prevision` varchar(20) DEFAULT 'Sin Previsión',
   `foto` tinytext,
   PRIMARY KEY (`rut`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +241,7 @@ CREATE TABLE `solicitud_deportiva` (
   KEY `codigo_actividad` (`codigo_actividad`),
   CONSTRAINT `solicitud_deportiva_ibfk_1` FOREIGN KEY (`rut_postulante`) REFERENCES `persona` (`rut`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `solicitud_deportiva_ibfk_2` FOREIGN KEY (`codigo_actividad`) REFERENCES `actividades` (`codigo_actividad`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,7 +263,6 @@ UNLOCK TABLES;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
 /*!50001 SET character_set_client      = utf8mb4 */;
 /*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `all_talleres` AS select `actividades`.`codigo_actividad` AS `codigo_actividad`,`actividades`.`rut_responsable` AS `rut_responsable`,`actividades`.`tipo` AS `tipo`,`actividades`.`cupos` AS `cupos`,`actividades`.`direccion` AS `direccion`,`actividades`.`nombre_actividad` AS `nombre_actividad`,`actividades`.`estado_actividad` AS `estado_actividad`,`actividades`.`descripción` AS `descripción`,`actividades`.`fecha_inicio` AS `fecha_inicio`,`actividades`.`fecha_termino` AS `fecha_termino`,`actividades`.`modalidad` AS `modalidad`,`actividades`.`requisitos` AS `requisitos`,`actividades`.`area` AS `area` from `actividades` where (`actividades`.`tipo` = 'Taller') */;
@@ -281,7 +280,6 @@ UNLOCK TABLES;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
 /*!50001 SET character_set_client      = utf8mb4 */;
 /*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `datos_profesor` AS select `persona`.`rut` AS `rut`,`persona`.`nombres` AS `nombres`,`persona`.`apellidos` AS `apellidos`,`persona`.`numero_contacto` AS `numero_contacto` from `persona` */;

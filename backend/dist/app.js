@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18,8 +20,6 @@ var _swaggerUiExpress = _interopRequireDefault(require("swagger-ui-express"));
 var _swaggerOptions = require("./swaggerOptions");
 
 var _solicitud = _interopRequireDefault(require("./routes/solicitud"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var specs = (0, _swaggerJsdoc["default"])(_swaggerOptions.options);
 var app = (0, _express["default"])();

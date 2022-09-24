@@ -52,6 +52,85 @@ Content-Type: application/json
 
 
 ###
+POST {{api}}/evento
+Content-Type: application/json
+
+{
+  "codigo_actividad": null,
+  "rut_responsable": "13.231.412-2",
+  "tipo": "Evento",
+  "cupos": 12,
+  "direccion": "Av. Cubo Rubik 123",
+  "nombre_actividad": "Futbol",
+  "estado_actividad": "Postulando",
+  "descripción": "Este Evento en la cancha de Quintero",
+  "fecha_inicio": "2022-10-10",
+  "fecha_termino": "2022-10-10",
+  "modalidad": "Presencial",
+  "requisitos": "Zapato de futbol",
+  "area": "Futbol"
+}
+
+###
+POST {{api}}/evento
+Content-Type: application/json
+
+{
+  "codigo_actividad": null,
+  "rut_responsable": "13.231.412-2",
+  "tipo": "Evento",
+  "cupos": 10,
+  "direccion": "Av. Cubo Rubik 123",
+  "nombre_actividad": "Basquetbol",
+  "estado_actividad": "Postulando",
+  "descripción": "Este Evento en la cancha de Basquetbol Quintero",
+  "fecha_inicio": "2022-10-10",
+  "fecha_termino": "2022-10-10",
+  "modalidad": "Presencial",
+  "requisitos": "Zapato de Basquetbol",
+  "area": "Basquetbol"
+}
+
+###
+POST {{api}}/evento
+Content-Type: application/json
+
+{
+  "codigo_actividad": null,
+  "rut_responsable": "13.231.412-2",
+  "tipo": "Evento",
+  "cupos": 40,
+  "direccion": "Av. Cubo Rubik 123",
+  "nombre_actividad": "Maraton",
+  "estado_actividad": "Postulando",
+  "descripción": "Este Evento en la plaza de Quintero",
+  "fecha_inicio": "2022-10-10",
+  "fecha_termino": "2022-10-10",
+  "modalidad": "Presencial",
+  "requisitos": "Zapato de Maraton",
+  "area": "Maraton"
+}
+
+###
+POST {{api}}/evento
+Content-Type: application/json
+
+{
+  "codigo_actividad": null,
+  "rut_responsable": "13.231.412-2",
+  "tipo": "Evento",
+  "cupos": 6,
+  "direccion": "Av. Cubo Rubik 123",
+  "nombre_actividad": "Tenis",
+  "estado_actividad": "Postulando",
+  "descripción": "Este Evento en la cancha de tenis de Quintero",
+  "fecha_inicio": "2022-10-10",
+  "fecha_termino": "2022-10-10",
+  "modalidad": "Presencial",
+  "requisitos": "Zapato de Tenis",
+  "area": "Tenis"
+}
+###
 DELETE {{api}}/solicitud/14
 
 ###

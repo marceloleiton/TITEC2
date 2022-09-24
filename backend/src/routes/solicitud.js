@@ -1,6 +1,7 @@
 import { Router } from "express";
 //express sirve para crear rutas
-import {getSolicitudes,
+import {
+    getSolicitudes,
     getEventos,
     getSolicitud,
     getSolicitudCount,
@@ -11,7 +12,8 @@ import {getSolicitudes,
     modificarSolicitud,
     modificarEvento,
     getEvento,
-    crearEvento} from "../controllers/solicitud"
+    crearEvento
+} from "../controllers/solicitud"
 
 const router = Router();
 
@@ -39,7 +41,7 @@ const router = Router();
  *      summary: Obtiene todas las solicitudes
  *      tags: [Solicitud]
  */
-router.get('/respuesta/solicitudes',getSolicitudes)
+router.get('/respuesta/solicitudes', getSolicitudes)
 
 /**
  * @swagger
@@ -48,7 +50,7 @@ router.get('/respuesta/solicitudes',getSolicitudes)
  *      summary: Obtiene todos los eventos
  *      tags: [Evento]
  */
- router.get('/respuesta/eventos',getEventos)
+router.get('/respuesta/eventos', getEventos)
 
 
 /**
@@ -58,7 +60,7 @@ router.get('/respuesta/solicitudes',getSolicitudes)
  *      summary: Obtiene un conteo de todas las solicitudes
  *      tags: [Solicitud]
  */
-router.get('/respuesta/solicitudes/count',getSolicitudCount)
+router.get('/respuesta/solicitudes/count', getSolicitudCount)
 
 /**
  * @swagger
@@ -67,7 +69,7 @@ router.get('/respuesta/solicitudes/count',getSolicitudCount)
  *      summary: Obtiene un conteo de todos los eventos
  *      tags: [Evento]
  */
- router.get('/respuesta/eventos/count',getEventosCount)
+router.get('/respuesta/eventos/count', getEventosCount)
 
 /**
  * @swagger
@@ -76,7 +78,7 @@ router.get('/respuesta/solicitudes/count',getSolicitudCount)
  *      summary: Obtiene una solicitud en específico
  *      tags: [Solicitud]
  */
-router.get('/respuesta/solicitud/:id',getSolicitud)
+router.get('/respuesta/solicitud/:id', getSolicitud)
 
 /**
  * @swagger
@@ -85,7 +87,7 @@ router.get('/respuesta/solicitud/:id',getSolicitud)
  *      summary: Obtiene un evento en específico
  *      tags: [Evento]
  */
- router.get('/respuesta/evento/:id',getEvento)
+router.get('/respuesta/evento/:id', getEvento)
 
 /**
  * @swagger
@@ -94,7 +96,7 @@ router.get('/respuesta/solicitud/:id',getSolicitud)
  *      summary: Crea una solicitud
  *      tags: [Solicitud]
  */
-router.post('/respuesta/solicitud',crearSolicitud)
+router.post('/respuesta/solicitud', crearSolicitud)
 /**
  * @swagger
  * /respuesta/evento:
@@ -102,7 +104,7 @@ router.post('/respuesta/solicitud',crearSolicitud)
  *      summary: Crea un evento
  *      tags: [Evento]
  */
- router.post('/respuesta/evento',crearEvento)
+router.post('/respuesta/evento', crearEvento)
 
 
 /**
@@ -112,7 +114,7 @@ router.post('/respuesta/solicitud',crearSolicitud)
  *      summary: Elimina una solicitud en específico
  *      tags: [Solicitud]
  */
-router.delete('/respuesta/solicitud/:id',eliminarSolicitud)
+router.delete('/respuesta/solicitud/:id', eliminarSolicitud)
 
 /**
  * @swagger
@@ -122,26 +124,26 @@ router.delete('/respuesta/solicitud/:id',eliminarSolicitud)
  *      tags: [Evento]
  */
 
- router.delete('/respuesta/evento/:id',eliminarEvento)
+router.delete('/respuesta/evento/:id', eliminarEvento)
 
- /**
-  * @swagger
-  * /respuesta/solicitud/{id}:
-  *  put:
-  *      summary: Modifica una solicitud en específico
-  *      tags: [Solicitud]
-  * 
-  */
-router.put('/respuesta/solicitud/:id',modificarSolicitud)
+/**
+ * @swagger
+ * /respuesta/solicitud/{id}:
+ *  put:
+ *      summary: Modifica una solicitud en específico
+ *      tags: [Solicitud]
+ * 
+ */
+router.put('/respuesta/solicitud/:id', modificarSolicitud)
 
- /**
-  * @swagger
-  * /respuesta/evento/{id}:
-  *  put:
-  *      summary: Modifica un evento en específico
-  *      tags: [Evento]
-  * 
-  */
-  router.put('/respuesta/evento/:id',modificarEvento)
+/**
+ * @swagger
+ * /respuesta/evento/{id}:
+ *  put:
+ *      summary: Modifica un evento en específico
+ *      tags: [Evento]
+ * 
+ */
+router.put('/respuesta/evento/:id', modificarEvento)
 
 export default router

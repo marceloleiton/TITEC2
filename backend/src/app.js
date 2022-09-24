@@ -5,7 +5,7 @@ import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUI from 'swagger-ui-express';
 import { options } from './swaggerOptions';
 
-const specs = swaggerJSDoc(options); 
+const specs = swaggerJSDoc(options);
 
 import solicitudRoutes from './routes/solicitud';
 
@@ -15,6 +15,6 @@ app.use(express.json())
 app.use(cors());//conectar aplicaciones de backend o servidor puede responder
 app.use(morgan('dev'));
 app.use(solicitudRoutes)
-app.use('/docs',swaggerUI.serve , swaggerUI.setup(specs));
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 
 export default app;

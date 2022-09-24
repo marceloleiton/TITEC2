@@ -7,6 +7,7 @@ import { options } from './swaggerOptions';
 
 const specs = swaggerJSDoc(options);
 
+
 import solicitudRoutes from './routes/solicitud';
 
 const app = express();

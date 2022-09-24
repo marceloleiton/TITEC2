@@ -51,29 +51,17 @@ Si utiliza simulador android debe seguir los pasos de * [![React-Native][React-N
    ```sh
    git clone 
    ```
-2. Crear archivo .env en Backend
-   ```sh
-      DB_HOST= localhost
 
-      DB_USER= Ingresar Nombre
-
-      DB_PASSWORD= Ingresar Contraseña
-
-      DB_DATABASE= titec1bd
-
-      DB_PORT= 3306
-
-   ```
-3. En la carpeta Backend  
+2. En la carpeta Backend  
    ```sh
    npm i
    ```
-4. En la carpeta Cliente  
+3. En la carpeta Cliente  
    ```sh
    npm i
    ```
 
-5. En la carpeta Cliente archivo api.js
+4. En la carpeta Cliente archivo api.js
    ```sh
    Debe ingresar su ip local sino tendrá problemas de red
    ```

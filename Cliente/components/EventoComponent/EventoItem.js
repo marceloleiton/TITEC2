@@ -8,7 +8,7 @@ const Evento = (props) => {
 
   let imageURL = "";
 
-  // Condiciones para el fondo en los talleres
+  // Condiciones para el fondo en los talleres "ES LA SOLUCIÓN MÁS CHANTA PERO FUNCIONA"
   if (Evento.nombre_actividad === "Futbol" || Evento.nombre_actividad === "Fútbol" || Evento.nombre_actividad === "fútbol" || Evento.nombre_actividad === "futbol")
     imageURL = require("../../assets/images/futbol.jpg")
   else if (Evento.nombre_actividad === "Basquetbol" || Evento.nombre_actividad === "basquetbol" || Evento.nombre_actividad === "Básquetbol" || Evento.nombre_actividad === "básquetbol")
@@ -29,7 +29,7 @@ const Evento = (props) => {
       <Text style={styles.requisitos} >Requisitos: {Evento.requisitos}</Text>
       <Pressable
         style={styles.searchButton}
-        onPress={() => navigation.navigate('SolicitudScreen')}>
+        onPress={() => navigation.navigate('SolicitudScreen', { codigo_actividad: Evento.codigo_actividad, nombre_actividad: Evento.nombre_actividad })}>
         <Text style={styles.searchButtonText}>inscribirse</Text>
       </Pressable>
     </ImageBackground>

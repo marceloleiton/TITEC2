@@ -6,15 +6,27 @@ import SolicitudScreen from './screens/Solicitud/SolicitudScreen';
 
 const Stack = createStackNavigator();
 
+{/* 
+    Los componentes principales de las "pantallas de eventos y solicitud a los eventos"
+
+    Es posible cambiar los títulos de los componentes con las Options, headertitle es el primer titulo visible más arriba de la pantalla
+*/}
+
+
 const App = () => {
   return (
 
-    <NavigationContainer>
+    < NavigationContainer >
       <Stack.Navigator>
-        <Stack.Screen name="EventosScreen" component={EventosScreen} options={{ headerStyle: { backgroundColor: '#1259F5' }, headerTitleStyle: { color: 'white' }, headerTitle: 'Eventos', headerTintColor: '#fff' }} />
-        <Stack.Screen name="SolicitudScreen" component={SolicitudScreen} options={{ headerStyle: { backgroundColor: '#1259F5' }, headerTitleStyle: { color: 'white' }, headerTitle: 'Inscripción a evento', headerTintColor: '#fff' }} />
+
+        <Stack.Screen name="EventosScreen" component={EventosScreen}
+          options={{ headerStyle: { backgroundColor: '#1259F5' }, headerTitleStyle: { color: 'white' }, headerTitle: 'Eventos', headerTintColor: '#fff' }} />
+
+        <Stack.Screen name="SolicitudScreen" component={SolicitudScreen}
+          options={{ headerStyle: { backgroundColor: '#1259F5' }, headerTitleStyle: { color: 'white' }, headerTintColor: '#fff' }} />
+
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer >
   );
 };
 

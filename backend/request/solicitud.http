@@ -1,4 +1,4 @@
-@api = http://localhost:3000/respuesta
+@api = http://10.100.6.6:3000/respuesta
 
 GET {{api}}/solicitudes 
 

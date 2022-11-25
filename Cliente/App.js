@@ -20,10 +20,10 @@ const App = () => {
       <Stack.Navigator>
 
         <Stack.Screen name="EventosScreen" component={EventosScreen}
-          options={{ headerStyle: { backgroundColor: '#1259F5' }, headerTitleStyle: { color: 'white' }, headerTitle: 'Eventos', headerTintColor: '#fff' }} />
+          options={{ headerShown:false }} />
 
         <Stack.Screen name="SolicitudScreen" component={SolicitudScreen}
-          options={{ headerStyle: { backgroundColor: '#1259F5' }, headerTitleStyle: { color: 'white' }, headerTintColor: '#fff' }} />
+          options={{ headerShown:false }} />
 
       </Stack.Navigator>
     </NavigationContainer >

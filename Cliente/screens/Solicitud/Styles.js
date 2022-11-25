@@ -2,18 +2,18 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        height: '100%',
-        backgroundColor: '#33a531',
+        flex: 1,
+        backgroundColor: '#61CE70',
         flexDirection: 'column',
     },
     cuadro: {
 
         marginTop: "10%",
-        height: '80%',
-        width: '90%',
+        flex:20,
         backgroundColor: 'white',
         borderRadius: 5,
         marginHorizontal: 20,
+        marginBottom: 20,
         borderWidth: 0.5,
         borderColor: 'lightgrey',
         flexDirection: 'column',
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: 10,
+        backgroundColor: '#D9D9D9',
 
     },
     buttonEnviar: {

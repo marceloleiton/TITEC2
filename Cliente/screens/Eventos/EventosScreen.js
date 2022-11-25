@@ -5,6 +5,7 @@ import styles from './Styles';
 import EventoList from '../../components/EventoComponent/EventoList';
 import { getEventos } from '../../api'
 import { useNavigation } from '@react-navigation/native';
+import Header from '../../components/Header';
 
 
 const EventosScreen = () => {
@@ -23,6 +24,7 @@ const EventosScreen = () => {
 
     return (
         <View style={styles.container}>
+            <Header/>
             <View style={styles.cuadro}>
                 <EventoList evento={evento} />
             </View>

@@ -2,7 +2,7 @@ import {Dimensions,StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container:{
-    backgroundColor: '#33a531',
+    backgroundColor: '#61CE70',
   },
 
   cuadro: {
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: "hidden",
     borderRadius: 9,
-    borderColor: 'lightgrey',
+    borderColor: '#61CE70',
     textShadowRadius: 5,
     marginBottom:10,
     marginHorizontal: 10,

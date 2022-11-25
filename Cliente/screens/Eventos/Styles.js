@@ -2,11 +2,11 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#33a531',
+        backgroundColor: '#61CE70',
         height: '100%'
     },
     cuadro: {
-        flex: 1,
+        flex: 20,
         textShadowColor: 'rgba(0, 0, 0, 0.90)',
         textShadowOffset: { width: -1, height: 1 },
     },

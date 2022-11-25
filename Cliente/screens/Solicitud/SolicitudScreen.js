@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import styles from './Styles';
 import { crearSolicitud } from '../../api';
+import Header from '../../components/Header';
 
 const SolicitudScreen = ({ navigation, route }) => {
 
@@ -42,6 +43,7 @@ const SolicitudScreen = ({ navigation, route }) => {
 
     return (
         <View style={styles.container}>
+            <Header/>
             <View style={styles.cuadro}>
 
                 <TextInput

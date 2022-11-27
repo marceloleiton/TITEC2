@@ -33,8 +33,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   TituloGeneral: {
-    fontSize: 28,
-    fontWeight: 'bold',
+    textShadowColor:'white',
+    textShadowOffset:{width: 1, height: 1},
+    textShadowRadius:10,
+    //-webkit-text-stroke: 2px black,
+    fontSize: 30,
+    //fontWeight: 'bold',
     color: 'black',
     marginBottom: 10,
   },
@@ -49,6 +53,9 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: "left",
     width: "100%",
+    textShadowColor:'white',
+    textShadowOffset:{width: 1, height: 1},
+    textShadowRadius:10,
   },
   requisitos: {
     fontSize: 17,
@@ -57,6 +64,9 @@ const styles = StyleSheet.create({
     //fontWeight: 'bold',
     color: 'black',
     textAlign: "left",
+    textShadowColor:'white',
+    textShadowOffset:{width: 1, height: 1},
+    textShadowRadius:10,
   },
   cupos: {
     fontSize: 17,
@@ -64,10 +74,14 @@ const styles = StyleSheet.create({
     //fontWeight: 'bold',
     color: 'black',
     textAlign: "left",
+    textShadowColor:'white',
+    textShadowOffset:{width: 1, height: 1},
+    textShadowRadius:10,
   },
   searchButton: {
     flex:1,
     justifyContent: 'center',
+    
   },
 });
 export default styles;

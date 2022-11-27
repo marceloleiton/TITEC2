@@ -33,6 +33,9 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold',
         color: 'black',
+        textShadowColor:'white',
+        textShadowOffset:{width: 1, height: 1},
+        textShadowRadius:10,
     },
     cuadrodescri: {
         height: '60%',

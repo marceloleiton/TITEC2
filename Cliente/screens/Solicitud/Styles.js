@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginVertical: 30,
         borderBottomWidth: 3,
-        borderColor: 'lightgrey',
+        borderColor: '#E4E8DF',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 10,
@@ -59,18 +59,17 @@ const styles = StyleSheet.create({
 
     },
     buttonEnviar: {
-        width: '90%',
-
-        marginHorizontal: '5%',
-        borderRadius: 20,
-        backgroundColor: '#f99f31',
-        alignItems: 'center',
+        backgroundColor: '#6EC1E4',
+        width: 120,
+        height: 50,
+        borderRadius: 50,
         justifyContent: 'center',
+        alignItems: 'center',
     },
     inputText: {
         fontSize: 15,
+        fontWeight: 'bold',
         padding: 10,
-        color: "#fff",
         textAlign: 'center',
         alignItems: 'center',
         justifyContent: 'center',

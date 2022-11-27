@@ -3,6 +3,7 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import EventosScreen from './screens/Eventos/EventosScreen';
 import SolicitudScreen from './screens/Solicitud/SolicitudScreen';
+import DescriptionScreen from './screens/Descripcion/DescriptionScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,9 @@ const App = () => {
       <Stack.Navigator>
 
         <Stack.Screen name="EventosScreen" component={EventosScreen}
+          options={{ headerShown:false }} />
+
+        <Stack.Screen name="Description" component={DescriptionScreen}
           options={{ headerShown:false }} />
 
         <Stack.Screen name="SolicitudScreen" component={SolicitudScreen}

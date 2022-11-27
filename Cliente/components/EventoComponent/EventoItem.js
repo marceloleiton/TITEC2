@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, ImageBackground, TouchableOpacity, Pressable } from 'react-native';
+import { Text, ImageBackground, Pressable, Image, View } from 'react-native';
 import styles from './Eventostyles';
 import { useNavigation } from '@react-navigation/native';
 const Evento = (props) => {
@@ -22,17 +22,22 @@ const Evento = (props) => {
 
   return (
 
-    <ImageBackground blurRadius={5} source={imageURL} resizeMode="cover" style={styles.image}>
-      <Text style={styles.TituloGeneral}>{Evento.nombre_actividad}</Text>
-      <Text style={styles.description} >{Evento.descripción}</Text>
-      <Text style={styles.cupos} >Cupos: {Evento.cupos}</Text>
-      <Text style={styles.requisitos} >Requisitos: {Evento.requisitos}</Text>
-      <Pressable
-        style={styles.searchButton}
-        onPress={() => navigation.navigate('SolicitudScreen', { codigo_actividad: Evento.codigo_actividad, nombre_actividad: Evento.nombre_actividad })}>
-        <Text style={styles.searchButtonText}>inscribirse</Text>
-      </Pressable>
-    </ImageBackground>
+    <View style={styles.flatcuadro}>
+      <ImageBackground blurRadius={7} source={imageURL} style={styles.image}>
+        <View style={styles.titulo}>
+          <Text style={styles.TituloGeneral}>{Evento.nombre_actividad}</Text>
+          {/* <Text style={styles.description} >{Evento.descripción}</Text> */}
+          <Text style={styles.cupos} >Cupos: {Evento.cupos}</Text>
+          <Text style={styles.requisitos} >Fecha: {Evento.fecha_inicio.split("T")[0]}</Text>
+        </View>
+        <Pressable
+          style={styles.searchButton}
+          onPress={() => navigation.navigate('Description', { codigo_actividad: Evento.codigo_actividad, nombre_actividad: Evento.nombre_actividad, descripción: Evento.descripción, requisitos: Evento.requisitos, cupos: Evento.cupos, fecha: Evento.fecha_inicio.split("T")[0] })}>
+          <Image style={styles.searchButtonIcon} source={require("../../assets/flecha.png")} />
+        </Pressable>
+      </ImageBackground>
+    </View>
+
 
   );
 };

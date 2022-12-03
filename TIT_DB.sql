@@ -65,7 +65,7 @@ CREATE TABLE categoria_evento (
 
 /* CREATE USER */
 DROP USER IF EXISTS 'grupo2'@'localhost';
-CREATE USER 'grupo2'@'localhost' IDENTIFIED BY '663rodrigo';
+CREATE USER 'grupo2'@'localhost' IDENTIFIED BY '963rodrigo';
 
 /* GRANT PRIVILEGES */
 

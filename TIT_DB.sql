@@ -2,7 +2,6 @@
 
 DROP DATABASE IF EXISTS tit;
 CREATE DATABASE tit CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-SET GLOBAL time_zone = 'America/Santiago';
 USE tit;
 
 /* CREATE TABLES */
@@ -65,15 +64,15 @@ CREATE TABLE categoria_evento (
 );
 
 /* CREATE USER */
-DROP USER IF EXISTS 'grupo6'@'localhost';
-CREATE USER 'grupo6'@'localhost' IDENTIFIED BY '654rodrigo';
+DROP USER IF EXISTS 'grupo2'@'localhost';
+CREATE USER 'grupo2'@'localhost' IDENTIFIED BY '663rodrigo';
 
 /* GRANT PRIVILEGES */
 
-GRANT ALL PRIVILEGES ON tit.persona TO 'grupo6'@'localhost';
-GRANT ALL PRIVILEGES ON tit.evento TO 'grupo6'@'localhost';
-GRANT ALL PRIVILEGES ON tit.usuario TO 'grupo6'@'localhost';
-GRANT ALL PRIVILEGES ON tit.inscribe_evento TO 'grupo6'@'localhost';
-GRANT ALL PRIVILEGES ON tit.categoria_evento TO 'grupo6'@'localhost';
+GRANT ALL PRIVILEGES ON tit.persona TO 'grupo2'@'localhost';
+GRANT ALL PRIVILEGES ON tit.evento TO 'grupo2'@'localhost';
+GRANT ALL PRIVILEGES ON tit.usuario TO 'grupo2'@'localhost';
+GRANT ALL PRIVILEGES ON tit.inscribe_evento TO 'grupo2'@'localhost';
+GRANT ALL PRIVILEGES ON tit.categoria_evento TO 'grupo2'@'localhost';
 
 FLUSH PRIVILEGES;

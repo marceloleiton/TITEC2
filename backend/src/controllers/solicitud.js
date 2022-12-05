@@ -1,57 +1,24 @@
 import { connect } from '../database';
 
-
-export const getSolicitudes = async (req, res) => {
-    const conexion = await connect();
-    const [filas] = await conexion.query('SELECT * FROM solicitud_deportiva');
-    res.json(filas);
-}
+#obtener todos los eventos
 export const getEventos = async (req, res) => {
     const conexion = await connect();
-    const [filas] = await conexion.query('SELECT * FROM actividades WHERE tipo="Evento" ');
+    const [filas] = await conexion.query('SELECT * FROM evento WHERE estado="Activo"');
     res.json(filas);
 }
 
-
-export const getSolicitud = async (req, res) => {
-    //podríamos hacer la excepción en caso de no existir ese id
-    const conexion = await connect();
-    const [filas] = await conexion.query('SELECT * FROM solicitud_deportiva WHERE rut_postulante = ?', [req.params.id,]);
-    res.json(filas[0]);
-}
+#obtener el evento seleccionado
 export const getEvento = async (req, res) => {
-    //podríamos hacer la excepción en caso de no existir ese id
     const conexion = await connect();
-    const [filas] = await conexion.query('SELECT * FROM actividades WHERE tipo="Evento" AND codigo_actividad = ?', [req.params.id,]);
+    const [filas] = await conexion.query('SELECT e.*, c.* FROM evento AS e LEFT JOIN categoria_evento AS c ON c.id_evento = e.id WHERE e.id = ?', [req.params.id,]);
     res.json(filas[0]);
 }
 
-
-export const getSolicitudCount = async (req, res) => {
-    const conexion = await connect();
-    const [filas] = await conexion.query("SELECT COUNT(*) FROM solicitud_deportiva");
-    res.json(filas[0]["COUNT(*)"]);
-}
-export const getEventosCount = async (req, res) => {
-    const conexion = await connect();
-    const [filas] = await conexion.query('SELECT COUNT(*) FROM actividades WHERE tipo="Evento" ');
-    res.json(filas[0]["COUNT(*)"]);
-}
-
-
+#hacer la inscripción al evento seleccionado(llenado del formulario)
 export const crearSolicitud = async (req, res) => {
     const conexion = await connect();
-    const [resultado] = await conexion.query('INSERT INTO solicitud_deportiva(id_solicitud,rut_postulante,codigo_actividad,fecha_inscripcion,datos_extra,obs_medica) VALUES(?,?,?,?,?,?)',
-        [req.body.id_solicitud, req.body.rut_postulante, req.body.codigo_actividad, req.body.fecha_inscripcion, req.body.datos_extra, req.body.obs_medica]);
-    res.json({
-        id: resultado.insertId,
-        ...req.body,
-    });
-}
-export const crearEvento = async (req, res) => {
-    const conexion = await connect();
-    const [resultado] = await conexion.query('INSERT INTO actividades(codigo_actividad,rut_responsable,tipo,cupos,direccion,nombre_actividad,estado_actividad,descripción,fecha_inicio,fecha_termino,modalidad,requisitos,area) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',
-        [req.body.codigo_actividad, req.body.rut_responsable, req.body.tipo, req.body.cupos, req.body.direccion, req.body.nombre_actividad, req.body.estado_actividad, req.body.descripción, req.body.fecha_inicio, req.body.fecha_termino, req.body.modalidad, req.body.requisitos, req.body.area]);
+    const [resultado] = await conexion.query('INSERT INTO persona(rut,nombres,apellidos,telefono_personal,telefono_contacto,correo,fecha_nacimiento,direccion,sexo,talla) VALUES(?,?,?,?,?,?,?,?,?,?)',
+        [req.body.rut, req.body.nombres, req.body.apellidos, req.body.telefono_personal, req.body.telefono_contacto, req.body.correo, req.body.fecha_nacimiento, req.body.direccion, req.body.sexo, req.body.talla]);
     res.json({
         id: resultado.insertId,
         ...req.body,
@@ -59,33 +26,13 @@ export const crearEvento = async (req, res) => {
 }
 
 
-export const eliminarSolicitud = async (req, res) => {
+#establecer la inscripción
+export const crearInscripcion = async (req, res) => {
     const conexion = await connect();
-    await conexion.query('DELETE FROM solicitud_deportiva WHERE tipo="Evento" AND id_solicitud = ?', [req.params.id,]);
-    res.sendStatus(204);
-}
-
-export const eliminarEvento = async (req, res) => {
-    const conexion = await connect();
-    await conexion.query('DELETE FROM actividades WHERE codigo_actividad = ?', [req.params.id,]);
-    res.sendStatus(204);
-}
-
-
-export const modificarSolicitud = async (req, res) => {
-    const conexion = await connect();
-    await conexion.query('UPDATE solicitud_deportiva SET ? WHERE id_solicitud = ?', [
-        req.body,
-        req.params.id
-    ]);
-    res.sendStatus(204);
-}
-
-export const modificarEvento = async (req, res) => {
-    const conexion = await connect();
-    await conexion.query('UPDATE actividades SET ? WHERE codigo_actividad = ?', [
-        req.body,
-        req.params.id
-    ]);
-    res.sendStatus(204);
+    const [resultado] = await conexion.query('INSERT INTO inscribe_evento (rut, id_evento, fecha, categoria) VALUES (?,?,?,?)',
+        [req.body.rut, req.body.id_evento, req.body.fecha, req.body.categoria]);
+    res.json({
+        id: resultado.insertId,
+        ...req.body,
+    });
 }

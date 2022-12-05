@@ -37,7 +37,16 @@ const SolicitudScreen = ({ navigation, route }) => {
         fecha_inscripcion: new Date(),
         datos_extra: " ",
         obs_medica: " ",
-        
+
+    });
+    const [inscripcion, setInscripcion] = useState({
+        id_solicitud: route.params.nombre_actividad,
+        rut_postulante: " ",
+        codigo_actividad: route.params.codigo_actividad,
+        fecha_inscripcion: new Date(),
+        datos_extra: " ",
+        obs_medica: " ",
+
     });
 
     {/* Esto solo le asigna el título al componente y indica el nombre del evento que se está inscribiendo*/ }
@@ -53,12 +62,13 @@ const SolicitudScreen = ({ navigation, route }) => {
     {/* crearSolicitud es una función de api.js para crear la solicitud al evento -> Una vez creada la solicitud envia nuevamente a la pantalla de eventos */ }
     const handleSubmit = () => {
         crearSolicitud(solicitud);
+        crearInscripcion(solicitud);
         navigation.navigate('EventosScreen');
     };
 
     return (
         <View style={styles.container}>
-            <Header/>
+            <Header />
             <View style={styles.containerDescription}>
                 <ImageBackground source={imageURL} blurRadius={2} style={styles.cuadro}>
                     <View style={styles.cuadrotext}>
@@ -67,46 +77,46 @@ const SolicitudScreen = ({ navigation, route }) => {
                         </Text>
                     </View>
                     <View style={styles.cuadrodescri}>
-                        <Text style={{margin:10, fontSize: 20, fontWeight:'700'}}>Inscripción</Text>
-                        
-                        <View style={{width:300, height:80, margin:10}}>
+                        <Text style={{ margin: 10, fontSize: 20, fontWeight: '700' }}>Inscripción</Text>
+
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
                             <TextInput
                                 style={styles.input}
                                 placeholder="RUT"
                                 placeholderTextColor="black"
                                 onChangeText={(text) => handleChange('rut_postulante', text)}
                             />
-                            <Text style={{flex:1, marginHorizontal:10, color:'#C4C3C2'}}>Ejemplo: 12.345.678-9</Text>
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: 12.345.678-9</Text>
                         </View>
 
-                        <View style={{width:300, height:80, margin:10}}>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
                             <TextInput
                                 style={styles.input}
                                 placeholder="Nombre y apellido"
                                 placeholderTextColor="black"
                                 onChangeText={(text) => handleChange('obs_medica', text)}
                             />
-                            <Text style={{flex:1, marginHorizontal:10, color:'#C4C3C2'}}>Ejemplo: Juan Olivares</Text>
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Juan Olivares</Text>
                         </View>
 
-                        <View style={{width:300, height:80, margin:10}}>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
                             <TextInput
                                 style={styles.input}
                                 placeholder="Obsevación médica"
                                 placeholderTextColor="black"
                                 onChangeText={(text) => handleChange('obs_medica', text)}
                             />
-                            <Text style={{flex:1, marginHorizontal:10, color:'#C4C3C2'}}>Ejemplo: Asma</Text>
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Asma</Text>
                         </View>
 
-                        <View style={{width:300, height:80, margin:10}}>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
                             <TextInput
                                 style={styles.input}
                                 placeholder="Datos Extra"
                                 placeholderTextColor="black"
                                 onChangeText={(text) => handleChange('datos_extra', text)}
                             />
-                            <Text style={{flex:1, marginHorizontal:10, color:'#C4C3C2'}}></Text>
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}></Text>
                         </View>
 
 
@@ -114,7 +124,7 @@ const SolicitudScreen = ({ navigation, route }) => {
                             onPress={handleSubmit}
                         >
                             <View style={styles.button}>
-                                <Text style={{fontSize: 15, fontWeight: '600'}}>ENVIAR</Text>
+                                <Text style={{ fontSize: 15, fontWeight: '600' }}>ENVIAR</Text>
                             </View>
                         </TouchableOpacity>
                     </View>

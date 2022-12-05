@@ -12,12 +12,6 @@ GET {{api}}/solicitud/13.231.412-2
 GET {{api}}/eventos/1
 
 ###
-GET {{api}}/solicitudes/count
-
-###
-GET {{api}}/eventos/count
-
-###
 POST {{api}}/solicitud
 Content-Type: application/json
 

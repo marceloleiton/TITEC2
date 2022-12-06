@@ -7,6 +7,13 @@ export const getEventos = async (req, res) => {
     res.json(filas);
 }
 
+//obtener categoria de los eventos donde el id es igual a evento 
+export const getCategoria = async (req, res) => {
+    const conexion = await connect();
+    const [filas] = await conexion.query('SELECT * from categoria_evento where id_evento in (select id from evento where estado="Activo");');
+    res.json(filas);
+}
+
 //obtener el evento seleccionado
 export const getEvento = async (req, res) => {
     const conexion = await connect();

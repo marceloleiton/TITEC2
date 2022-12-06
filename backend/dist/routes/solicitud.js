@@ -68,5 +68,14 @@ router.post('/respuesta/solicitud', _solicitud.crearSolicitud);
  */
 
 router.post('/respuesta/inscripcion', _solicitud.crearInscripcion);
+/**
+ * @swagger
+ * /respuesta/categoria:
+ * get:
+ *     summary: Obtiene todas las categorias
+ *    tags: [Evento]
+ */
+
+router.get('/respuesta/categoria', _solicitud.getCategoria);
 var _default = router;
 exports["default"] = _default;

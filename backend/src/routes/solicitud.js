@@ -4,7 +4,8 @@ import {
     getEventos,
     crearSolicitud,
     getEvento,
-    crearInscripcion
+    crearInscripcion,
+    getCategoria,
 } from "../controllers/solicitud"
 
 const router = Router();
@@ -65,6 +66,15 @@ router.post('/respuesta/solicitud', crearSolicitud)
  *      tags: [Inscripcion]
  */
 router.post('/respuesta/inscripcion', crearInscripcion)
+
+/**
+ * @swagger
+ * /respuesta/categoria:
+ * get:
+ *     summary: Obtiene todas las categorias
+ *    tags: [Evento]
+ */
+router.get('/respuesta/categoria', getCategoria)
 
 
 export default router

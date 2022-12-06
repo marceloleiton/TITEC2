@@ -94,6 +94,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#D9D9D9',
         padding: 10,
     },
+
+    input2: {
+        flex:2,
+        fontSize: 15,
+        backgroundColor: '#D9D9D9',
+        padding: 10,
+    },
 });
 
 export default styles;

@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getEventos = exports.getEvento = exports.crearSolicitud = exports.crearInscripcion = void 0;
+exports.getEventos = exports.getEvento = exports.getCategoria = exports.crearSolicitud = exports.crearInscripcion = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -55,12 +55,12 @@ var getEventos = /*#__PURE__*/function () {
   return function getEventos(_x, _x2) {
     return _ref.apply(this, arguments);
   };
-}(); //obtener el evento seleccionado
+}(); //obtener categoria de los eventos donde el id es igual a evento 
 
 
 exports.getEventos = getEventos;
 
-var getEvento = /*#__PURE__*/function () {
+var getCategoria = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
     var conexion, _yield$conexion$query3, _yield$conexion$query4, filas;
 
@@ -74,13 +74,13 @@ var getEvento = /*#__PURE__*/function () {
           case 2:
             conexion = _context2.sent;
             _context2.next = 5;
-            return conexion.query('SELECT e.*, c.* FROM evento AS e LEFT JOIN categoria_evento AS c ON c.id_evento = e.id WHERE e.id = ?', [req.params.id]);
+            return conexion.query('SELECT * from categoria_evento where id_evento in (select id from evento where estado="Activo");');
 
           case 5:
             _yield$conexion$query3 = _context2.sent;
             _yield$conexion$query4 = (0, _slicedToArray2["default"])(_yield$conexion$query3, 1);
             filas = _yield$conexion$query4[0];
-            res.json(filas[0]);
+            res.json(filas);
 
           case 9:
           case "end":
@@ -90,17 +90,17 @@ var getEvento = /*#__PURE__*/function () {
     }, _callee2);
   }));
 
-  return function getEvento(_x3, _x4) {
+  return function getCategoria(_x3, _x4) {
     return _ref2.apply(this, arguments);
   };
-}(); //hacer la inscripción al evento seleccionado(llenado del formulario)
+}(); //obtener el evento seleccionado
 
 
-exports.getEvento = getEvento;
+exports.getCategoria = getCategoria;
 
-var crearSolicitud = /*#__PURE__*/function () {
+var getEvento = /*#__PURE__*/function () {
   var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(req, res) {
-    var conexion, _yield$conexion$query5, _yield$conexion$query6, resultado;
+    var conexion, _yield$conexion$query5, _yield$conexion$query6, filas;
 
     return _regenerator["default"].wrap(function _callee3$(_context3) {
       while (1) {
@@ -112,15 +112,13 @@ var crearSolicitud = /*#__PURE__*/function () {
           case 2:
             conexion = _context3.sent;
             _context3.next = 5;
-            return conexion.query('INSERT INTO persona(rut,nombres,apellidos,telefono_personal,telefono_contacto,correo,fecha_nacimiento,direccion,sexo,talla) VALUES(?,?,?,?,?,?,?,?,?,?)', [req.body.rut, req.body.nombres, req.body.apellidos, req.body.telefono_personal, req.body.telefono_contacto, req.body.correo, req.body.fecha_nacimiento, req.body.direccion, req.body.sexo, req.body.talla]);
+            return conexion.query('SELECT e.*, c.* FROM evento AS e LEFT JOIN categoria_evento AS c ON c.id_evento = e.id WHERE e.id = ?', [req.params.id]);
 
           case 5:
             _yield$conexion$query5 = _context3.sent;
             _yield$conexion$query6 = (0, _slicedToArray2["default"])(_yield$conexion$query5, 1);
-            resultado = _yield$conexion$query6[0];
-            res.json(_objectSpread({
-              id: resultado.insertId
-            }, req.body));
+            filas = _yield$conexion$query6[0];
+            res.json(filas[0]);
 
           case 9:
           case "end":
@@ -130,15 +128,15 @@ var crearSolicitud = /*#__PURE__*/function () {
     }, _callee3);
   }));
 
-  return function crearSolicitud(_x5, _x6) {
+  return function getEvento(_x5, _x6) {
     return _ref3.apply(this, arguments);
   };
-}(); //establecer la inscripción
+}(); //hacer la inscripción al evento seleccionado(llenado del formulario)
 
 
-exports.crearSolicitud = crearSolicitud;
+exports.getEvento = getEvento;
 
-var crearInscripcion = /*#__PURE__*/function () {
+var crearSolicitud = /*#__PURE__*/function () {
   var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(req, res) {
     var conexion, _yield$conexion$query7, _yield$conexion$query8, resultado;
 
@@ -152,7 +150,7 @@ var crearInscripcion = /*#__PURE__*/function () {
           case 2:
             conexion = _context4.sent;
             _context4.next = 5;
-            return conexion.query('INSERT INTO inscribe_evento (rut, id_evento, fecha, categoria) VALUES (?,?,?,?)', [req.body.rut, req.body.id_evento, req.body.fecha, req.body.categoria]);
+            return conexion.query('INSERT INTO persona(rut,nombres,apellidos,telefono_personal,telefono_contacto,correo,fecha_nacimiento,direccion,sexo,talla) VALUES(?,?,?,?,?,?,?,?,?,?)', [req.body.rut, req.body.nombres, req.body.apellidos, req.body.telefono_personal, req.body.telefono_contacto, req.body.correo, req.body.fecha_nacimiento, req.body.direccion, req.body.sexo, req.body.talla]);
 
           case 5:
             _yield$conexion$query7 = _context4.sent;
@@ -170,8 +168,48 @@ var crearInscripcion = /*#__PURE__*/function () {
     }, _callee4);
   }));
 
-  return function crearInscripcion(_x7, _x8) {
+  return function crearSolicitud(_x7, _x8) {
     return _ref4.apply(this, arguments);
+  };
+}(); //establecer la inscripción
+
+
+exports.crearSolicitud = crearSolicitud;
+
+var crearInscripcion = /*#__PURE__*/function () {
+  var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res) {
+    var conexion, _yield$conexion$query9, _yield$conexion$query10, resultado;
+
+    return _regenerator["default"].wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return (0, _database.connect)();
+
+          case 2:
+            conexion = _context5.sent;
+            _context5.next = 5;
+            return conexion.query('INSERT INTO inscribe_evento (rut, id_evento, fecha, categoria) VALUES (?,?,?,?)', [req.body.rut, req.body.id_evento, req.body.fecha, req.body.categoria]);
+
+          case 5:
+            _yield$conexion$query9 = _context5.sent;
+            _yield$conexion$query10 = (0, _slicedToArray2["default"])(_yield$conexion$query9, 1);
+            resultado = _yield$conexion$query10[0];
+            res.json(_objectSpread({
+              id: resultado.insertId
+            }, req.body));
+
+          case 9:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+
+  return function crearInscripcion(_x9, _x10) {
+    return _ref5.apply(this, arguments);
   };
 }();
 

@@ -50,8 +50,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.41,
         shadowRadius: 9.11,
         elevation: 14,
-        justifyContent: 'flex-start',
-        alignItems: 'center',
         flexDirection: 'column',
     },
     description: {
@@ -71,6 +69,7 @@ const styles = StyleSheet.create({
         color: '#8F938A',
     },
     button: {
+        marginTop: 5,
         backgroundColor: '#6EC1E4',
         width: 110,
         height: 50,

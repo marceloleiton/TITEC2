@@ -55,9 +55,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     description: {
-        fontSize: 18,
+        fontSize: 15,
         color: 'black',
-        textAlign: 'center',
+        textAlign: 'auto' ,
         margin: 10,
     },
     text: {

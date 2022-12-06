@@ -3,9 +3,10 @@ import { connect } from '../database';
 // obtener todos los eventos
 export const getEventos = async (req, res) => {
     const conexion = await connect();
-    const [filas] = await conexion.query('SELECT * FROM evento WHERE estado="Activo"');
+    const [filas] = await conexion.query('SELECT e.*, c.* FROM evento AS e LEFT JOIN categoria_evento AS c ON c.id_evento = e.id WHERE e.estado="Activo"');
     res.json(filas);
 }
+//SELECT * FROM evento WHERE estado="Activo"
 
 //obtener categoria de los eventos donde el id es igual a evento 
 export const getCategoria = async (req, res) => {

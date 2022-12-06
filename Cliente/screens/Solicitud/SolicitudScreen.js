@@ -33,12 +33,12 @@ const SolicitudScreen = ({ navigation, route }) => {
     Estos parámetros con llenados mediante handleChange donde está el "return"
     */ }
 
-    const [date, setDate] = useState(new Date(1598051730000));        
+    const [date, setDate] = useState(new Date(1598051730000));
 
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate;
         setDate(currentDate);
-      };
+    };
 
     const showMode = (currentMode) => {
         DateTimePickerAndroid.open({
@@ -47,8 +47,8 @@ const SolicitudScreen = ({ navigation, route }) => {
             mode: currentMode,
             is24Hour: true,
         });
-      };
-    
+    };
+
     // console.log(date);
     // let dateFormat = moment(date).format('YYYY-MM-DD');
     // console.log(dateFormat);
@@ -56,7 +56,7 @@ const SolicitudScreen = ({ navigation, route }) => {
     const showDatepicker = () => {
         showMode('date');
     };
-    
+
     //   const showTimepicker = () => {
     //     showMode('time');
     //   };
@@ -70,11 +70,11 @@ const SolicitudScreen = ({ navigation, route }) => {
 
 
     const handleChange = (name, value) => setSolicitud({ ...solicitud, [name]: value });
-    
+
 
     {/* crearSolicitud es una función de api.js para crear la solicitud al evento -> Una vez creada la solicitud envia nuevamente a la pantalla de eventos */ }
     const handleSubmit = () => {
-        //crearSolicitud(solicitud);
+        crearSolicitud(solicitud);
         crearInscripcion(inscripcion);
         navigation.navigate('EventosScreen');
     };
@@ -105,21 +105,24 @@ const SolicitudScreen = ({ navigation, route }) => {
         telefono_personal: " ",
         telefono_contacto: " ",
         correo: " ",
-        fecha_nacimiento: " ", 
+        fecha_nacimiento: " ",
         direccion: " ",
         sexo: " ",
         talla: " ",
-    }); 
+    });
 
     let fechaActual = new Date();
-    inscripcion.fecha = moment(fechaActual).format('YYYY-MM-DD');
+    fechaActual = moment(fechaActual).format('YYYY-MM-DD');
 
     let inscripcion = {
         rut: solicitud.rut,
         id_evento: route.params.codigo_actividad,
-        fecha: " ",
-        categoria: ""
+        fecha: fechaActual,
+        categoria: "test",
+
     }
+    console.log(inscripcion)
+    console.log(solicitud.rut, route.params.codigo_actividad, new Date(),)
 
     // const [inscripcion] = useState({
     //     rut: solicitud.rut,
@@ -128,7 +131,7 @@ const SolicitudScreen = ({ navigation, route }) => {
     //     categoria: route.params.categoria,
     // });
 
-    let dateString = (date.getFullYear() + '-' + (date.getMonth() + 1)  + '-' + date.getDate())
+    let dateString = (date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate())
     solicitud.fecha_nacimiento = dateString;
     //console.log(solicitud.fecha_nacimiento);
 
@@ -146,136 +149,136 @@ const SolicitudScreen = ({ navigation, route }) => {
                     <ScrollView style={styles.cuadrodescri}>
 
                         {/* <View style={styles.cuadrodescri}> */}
-                            <Text style={{ margin: 10, fontSize: 20, fontWeight: '700' }}>Inscripción</Text>
+                        <Text style={{ margin: 10, fontSize: 20, fontWeight: '700' }}>Inscripción</Text>
 
-                            <View style={{ width: 300, height: 80, margin: 10 }}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="RUT"
-                                    placeholderTextColor="black"
-                                    onChangeText={(text) => handleChange('rut', text)}
-                                />
-                                <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: 12.345.678-9</Text>
-                            </View>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="RUT"
+                                placeholderTextColor="black"
+                                onChangeText={(text) => handleChange('rut', text)}
+                            />
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: 12.345.678-9</Text>
+                        </View>
 
-                            <View style={{ width: 300, height: 80, margin: 10 }}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Nombres"
-                                    placeholderTextColor="black"
-                                    onChangeText={(text) => handleChange('nombres', text)}
-                                />
-                                <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Juan Rodrigo</Text>
-                            </View>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Nombres"
+                                placeholderTextColor="black"
+                                onChangeText={(text) => handleChange('nombres', text)}
+                            />
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Juan Rodrigo</Text>
+                        </View>
 
-                            <View style={{ width: 300, height: 80, margin: 10 }}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Apellidos"
-                                    placeholderTextColor="black"
-                                    onChangeText={(text) => handleChange('apellidos', text)}
-                                />
-                                <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Olivares Baeza</Text>
-                            </View>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Apellidos"
+                                placeholderTextColor="black"
+                                onChangeText={(text) => handleChange('apellidos', text)}
+                            />
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Olivares Baeza</Text>
+                        </View>
 
-                            <View style={{ width: 300, height: 80, margin: 10 }}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Telefono Personal"
-                                    placeholderTextColor="black"
-                                    onChangeText={(text) => handleChange('telefono_personal', text)}
-                                />
-                                <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: 978456732</Text>
-                            </View>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Telefono Personal"
+                                placeholderTextColor="black"
+                                onChangeText={(text) => handleChange('telefono_personal', text)}
+                            />
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: 978456732</Text>
+                        </View>
 
-                            <View style={{ width: 300, height: 80, margin: 10 }}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Telefono Contacto"
-                                    placeholderTextColor="black"
-                                    onChangeText={(text) => handleChange('telefono_contacto', text)}
-                                />
-                                <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: 978456732</Text>
-                            </View>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Telefono Contacto"
+                                placeholderTextColor="black"
+                                onChangeText={(text) => handleChange('telefono_contacto', text)}
+                            />
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: 978456732</Text>
+                        </View>
 
-                            <View style={{ width: 300, height: 80, margin: 10 }}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Correo"
-                                    placeholderTextColor="black"
-                                    onChangeText={(text) => handleChange('correo', text)}
-                                />
-                                <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: correo..@gmail.com</Text>
-                            </View>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Correo"
+                                placeholderTextColor="black"
+                                onChangeText={(text) => handleChange('correo', text)}
+                            />
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: correo..@gmail.com</Text>
+                        </View>
 
 
 
-                            <View style={{ width: 300, height: 80, margin: 10 }}>
-                                <Text
-                                    style = {styles.input2}
-                                >
-                                    Fecha de nacimiento: {dateString}
-                                </Text>
-                                <Button 
-                                    onPress={showDatepicker}
-                                    title="Seleccionar Fecha" 
-                                    color="#6EC1E4"
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
+                            <Text
+                                style={styles.input2}
+                            >
+                                Fecha de nacimiento: {dateString}
+                            </Text>
+                            <Button
+                                onPress={showDatepicker}
+                                title="Seleccionar Fecha"
+                                color="#6EC1E4"
 
-                                />
+                            />
 
-                            </View>
+                        </View>
 
-                            <View style={{ width: 300, height: 80, margin: 10 }}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Dirección"
-                                    placeholderTextColor="black"
-                                    onChangeText={(text) => handleChange('direccion', text)}
-                                />
-                                <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Carrelo 352</Text>
-                            </View>
+                        <View style={{ width: 300, height: 80, margin: 10 }}>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Dirección"
+                                placeholderTextColor="black"
+                                onChangeText={(text) => handleChange('direccion', text)}
+                            />
+                            <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Carrelo 352</Text>
+                        </View>
 
-                            <View style={{ width: 300, height: 50, margin: 10 }}>
-                                <DropDownPicker
-                                    open={open}
-                                    value={value}
-                                    items={items}
-                                    setOpen={setOpen}
-                                    setValue={setValue}
-                                    setItems={setItems}
-                                    placeholder="Sexo"
-                                    placeholderStyle={{ color: 'black' }}
-                                    //style={{ backgroundColor: '#C4C3C2' }}
-                                    onChangeValue={(text) => handleChange('sexo', text)}
-                                    zIndex={3000}
-                                    zIndexInverse={1000}
-                                
-                                />
-                                {/* <TextInput
+                        <View style={{ width: 300, height: 50, margin: 10 }}>
+                            <DropDownPicker
+                                open={open}
+                                value={value}
+                                items={items}
+                                setOpen={setOpen}
+                                setValue={setValue}
+                                setItems={setItems}
+                                placeholder="Sexo"
+                                placeholderStyle={{ color: 'black' }}
+                                //style={{ backgroundColor: '#C4C3C2' }}
+                                onChangeValue={(text) => handleChange('sexo', text)}
+                                zIndex={3000}
+                                zIndexInverse={1000}
+
+                            />
+                            {/* <TextInput
                                     style={styles.input}
                                     placeholder="Sexo"
                                     placeholderTextColor="black"
                                     onChangeText={(text) => handleChange('datos_extra', text)}
                                 />
                                 <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}></Text> */}
-                            </View>
+                        </View>
 
-                            <View style={{ width: 300, height: 50, margin: 10 }}>
-                                <DropDownPicker
-                                    open={open2}
-                                    value={value2}
-                                    items={items2}
-                                    setOpen={setOpen2}
-                                    setValue={setValue2}
-                                    setItems={setItems2}
-                                    placeholder="Talla"
-                                    placeholderStyle={{ color: 'black' }}
-                                    //style={{ backgroundColor: '#C4C3C2', padding: 10 }}
-                                    onChangeValue={(text) => handleChange('talla', text)}
-                                    zIndex={1000}
-                                    zIndexInverse={3000}
-                                />
-                            </View>
+                        <View style={{ width: 300, height: 50, margin: 10 }}>
+                            <DropDownPicker
+                                open={open2}
+                                value={value2}
+                                items={items2}
+                                setOpen={setOpen2}
+                                setValue={setValue2}
+                                setItems={setItems2}
+                                placeholder="Talla"
+                                placeholderStyle={{ color: 'black' }}
+                                //style={{ backgroundColor: '#C4C3C2', padding: 10 }}
+                                onChangeValue={(text) => handleChange('talla', text)}
+                                zIndex={1000}
+                                zIndexInverse={3000}
+                            />
+                        </View>
 
                         {/* </View> */}
                     </ScrollView>

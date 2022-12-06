@@ -31,10 +31,13 @@ const Evento = (props) => {
           <Text style={styles.requisitos} >Fecha de inscripción: {Evento.fecha_inicio.split("T")[0]}</Text>
           <Text style={styles.requisitos} >Termino de inscripción: {Evento.fecha_termino.split("T")[0]}</Text>
         </View>
+
         <Pressable
           style={styles.searchButton}
-          onPress={() => navigation.navigate('Description', { codigo_actividad: Evento.id, nombre: Evento.nombre, descripción: Evento.descripcion, requisitos: Evento.requisitos, cupos: Evento.cupo, fecha: Evento.fecha_inicio.split("T")[0] })}>
+
+          onPress={() => navigation.navigate('Description', { codigo_actividad: Evento.id, nombre: Evento.nombre, descripción: Evento.descripcion, requisitos: Evento.requisitos, cupos: Evento.cupo, fecha: Evento.fecha_inicio.split("T")[0], categoria: Evento.categoria })}>
           <Image style={styles.searchButtonIcon} source={require("../../assets/flecha.png")} />
+
         </Pressable>
       </ImageBackground>
     </View>
@@ -42,5 +45,4 @@ const Evento = (props) => {
 
   );
 };
-
 export default Evento;

@@ -14,7 +14,7 @@ const EventosScreen = () => {
     const [evento, setEvento] = useState([])
     const cargarEvento = async () => {
         const data = await getEventos()
-        console.log(data)
+        console.log("EVENTOS : ", data)
         setEvento(data)
     }
 
@@ -24,7 +24,7 @@ const EventosScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Header/>
+            <Header />
             <View style={styles.cuadro}>
                 <EventoList evento={evento} />
             </View>

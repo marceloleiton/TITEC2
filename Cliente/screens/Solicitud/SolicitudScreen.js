@@ -118,7 +118,7 @@ const SolicitudScreen = ({ navigation, route }) => {
         rut: solicitud.rut,
         id_evento: route.params.codigo_actividad,
         fecha: fechaActual,
-        categoria: "test",
+        categoria: route.params.categoria,
 
     }
     console.log(inscripcion)

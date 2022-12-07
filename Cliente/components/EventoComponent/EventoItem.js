@@ -5,7 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 const Evento = (props) => {
   const navigation = useNavigation();
   const Evento = props.evento;
-
+  console.log(Evento.categoria)
+  let cat1 = Evento.categoria;
   let imageURL = "";
 
   // Condiciones para el fondo en los talleres "ES LA SOLUCIÓN MÁS CHANTA PERO FUNCIONA"
@@ -35,7 +36,7 @@ const Evento = (props) => {
         <Pressable
           style={styles.searchButton}
 
-          onPress={() => navigation.navigate('Description', { codigo_actividad: Evento.id, nombre: Evento.nombre, descripción: Evento.descripcion, requisitos: Evento.requisitos, cupos: Evento.cupo, fecha: Evento.fecha_inicio.split("T")[0], categoria: Evento.categoria })}>
+          onPress={() => navigation.navigate('Description', { categoria: cat1, codigo_actividad: Evento.id, nombre: Evento.nombre, descripción: Evento.descripcion, requisitos: Evento.requisitos, cupos: Evento.cupo, fecha: Evento.fecha_inicio.split("T")[0] })}>
           <Image style={styles.searchButtonIcon} source={require("../../assets/flecha.png")} />
 
         </Pressable>

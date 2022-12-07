@@ -6,10 +6,9 @@ import Header from '../../components/Header';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
 import DropDownPicker from 'react-native-dropdown-picker';
 import moment from 'moment/moment';
-import { getCategoria } from '../../api';
+
 
 const SolicitudScreen = ({ navigation, route }) => {
-
     let imageURL = ''
 
     if (route.params.nombre === "Futbol" || route.params.nombre === "Fútbol" || route.params.nombre === "fútbol" || route.params.nombre === "futbol")
@@ -68,15 +67,24 @@ const SolicitudScreen = ({ navigation, route }) => {
         }
     }, []);
 
-
+    const [textInputName, setTextInputName] = useState('');
+    const [textInputApellido, setTextInputApellido] = useState('');
     const handleChange = (name, value) => setSolicitud({ ...solicitud, [name]: value });
-
 
     {/* crearSolicitud es una función de api.js para crear la solicitud al evento -> Una vez creada la solicitud envia nuevamente a la pantalla de eventos */ }
     const handleSubmit = () => {
-        crearSolicitud(solicitud);
-        crearInscripcion(inscripcion);
-        navigation.navigate('EventosScreen');
+        if (!textInputName.trim()) {
+            alert('ingrese un nombre valido porfavor');
+            return;
+        }
+        if (!textInputApellido.trim()) {
+            alert('ingrese un apellido valido porfavor');
+            return;
+        }
+        else {
+            crearSolicitud(solicitud);
+            navigation.navigate('EventosScreen');
+        }
     };
 
     //elegir sexo
@@ -118,12 +126,9 @@ const SolicitudScreen = ({ navigation, route }) => {
         rut: solicitud.rut,
         id_evento: route.params.codigo_actividad,
         fecha: fechaActual,
-        categoria: route.params.categoria,
-
+        categoria: "General",
     }
     console.log(inscripcion)
-    console.log(solicitud.rut, route.params.codigo_actividad, new Date(),)
-
     // const [inscripcion] = useState({
     //     rut: solicitud.rut,
     //     id_evento: route.params.codigo_actividad,
@@ -166,7 +171,8 @@ const SolicitudScreen = ({ navigation, route }) => {
                                 style={styles.input}
                                 placeholder="Nombres"
                                 placeholderTextColor="black"
-                                onChangeText={(text) => handleChange('nombres', text)}
+                                onChangeText={(text) => setTextInputName('nombres', text)}
+
                             />
                             <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Juan Rodrigo</Text>
                         </View>
@@ -176,7 +182,7 @@ const SolicitudScreen = ({ navigation, route }) => {
                                 style={styles.input}
                                 placeholder="Apellidos"
                                 placeholderTextColor="black"
-                                onChangeText={(text) => handleChange('apellidos', text)}
+                                onChangeText={(text) => setTextInputApellido('apellidos', text)}
                             />
                             <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Olivares Baeza</Text>
                         </View>

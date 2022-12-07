@@ -36,13 +36,13 @@ var getEventos = /*#__PURE__*/function () {
           case 2:
             conexion = _context.sent;
             _context.next = 5;
-            return conexion.query('SELECT * FROM evento WHERE estado="Activo"');
+            return conexion.query('SELECT categoria_evento.categoria, evento.* FROM evento LEFT JOIN categoria_evento ON categoria_evento.id_evento = evento.id WHERE evento.id = categoria_evento.id_evento and evento.estado = "Activo"');
 
           case 5:
             _yield$conexion$query = _context.sent;
             _yield$conexion$query2 = (0, _slicedToArray2["default"])(_yield$conexion$query, 1);
             filas = _yield$conexion$query2[0];
-            res.json(filas);
+            res.json(filas[0]);
 
           case 9:
           case "end":
@@ -55,7 +55,8 @@ var getEventos = /*#__PURE__*/function () {
   return function getEventos(_x, _x2) {
     return _ref.apply(this, arguments);
   };
-}(); //obtener categoria de los eventos donde el id es igual a evento 
+}(); //SELECT * FROM evento WHERE estado="Activo"
+//obtener categoria de los eventos donde el id es igual a evento 
 
 
 exports.getEventos = getEventos;

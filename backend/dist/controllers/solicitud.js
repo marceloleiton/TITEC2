@@ -42,7 +42,7 @@ var getEventos = /*#__PURE__*/function () {
             _yield$conexion$query = _context.sent;
             _yield$conexion$query2 = (0, _slicedToArray2["default"])(_yield$conexion$query, 1);
             filas = _yield$conexion$query2[0];
-            res.json(filas[0]);
+            res.json(filas);
 
           case 9:
           case "end":

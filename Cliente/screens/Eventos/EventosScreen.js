@@ -12,6 +12,7 @@ const EventosScreen = () => {
 
     const navigation = useNavigation();
     const [evento, setEvento] = useState([])
+
     const cargarEvento = async () => {
         const data = await getEventos()
         console.log("EVENTOS : ", data)

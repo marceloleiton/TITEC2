@@ -15,7 +15,7 @@ const EventosScreen = () => {
 
     const cargarEvento = async () => {
         const data = await getEventos()
-        //console.log("EVENTOS : ", data)
+        console.log("EVENTOS : ", data)
         setEvento(data)
     }
 

@@ -5,6 +5,6 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 var _app = _interopRequireDefault(require("./app"));
 
 //import './database';
-_app["default"].listen(3000);
+_app["default"].listen(3333);
 
-console.log('servidor en puerto 3000');
+console.log('servidor en puerto 3333');

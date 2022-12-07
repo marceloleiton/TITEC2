@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 const Evento = (props) => {
   const navigation = useNavigation();
   const Evento = props.evento;
-  console.log(Evento.categoria)
+  //console.log(Evento.categoria)
   let cat1 = Evento.categoria;
   let imageURL = "";
 

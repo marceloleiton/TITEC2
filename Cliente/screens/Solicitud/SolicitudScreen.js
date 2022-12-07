@@ -171,7 +171,7 @@ const SolicitudScreen = ({ navigation, route }) => {
                                 style={styles.input}
                                 placeholder="Nombres"
                                 placeholderTextColor="black"
-                                onChangeText={(text) => setTextInputName('nombres', text)}
+                                onChangeText={(text) => handleChange('nombres', text)}
 
                             />
                             <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Juan Rodrigo</Text>
@@ -182,7 +182,7 @@ const SolicitudScreen = ({ navigation, route }) => {
                                 style={styles.input}
                                 placeholder="Apellidos"
                                 placeholderTextColor="black"
-                                onChangeText={(text) => setTextInputApellido('apellidos', text)}
+                                onChangeText={(text) => handleChange('apellidos', text)}
                             />
                             <Text style={{ flex: 1, marginHorizontal: 10, color: '#C4C3C2' }}>Ejemplo: Olivares Baeza</Text>
                         </View>

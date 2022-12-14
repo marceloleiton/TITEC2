@@ -118,7 +118,7 @@ const SolicitudScreen = ({ navigation, route }) => {
         rut: solicitud.rut,
         id_evento: route.params.codigo_actividad,
         fecha: fechaActual,
-        categoria: route.params.categoria,
+        categoria: "General",
 
     }
     console.log(inscripcion)
@@ -134,7 +134,6 @@ const SolicitudScreen = ({ navigation, route }) => {
     let dateString = (date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate())
     solicitud.fecha_nacimiento = dateString;
     //console.log(solicitud.fecha_nacimiento);
-
 
     return (
         <View style={styles.container}>
@@ -298,3 +297,4 @@ const SolicitudScreen = ({ navigation, route }) => {
 }
 
 export default SolicitudScreen;
+

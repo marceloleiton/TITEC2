@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },
     containerDescription: {
         backgroundColor: '#61CE70',
-        flex:20,
+        flex: 20,
     },
     cuadro: {
         backgroundColor: '#fff',
@@ -29,13 +29,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 10,
     },
-    title:{
+    title: {
         fontSize: 40,
         fontWeight: 'bold',
         color: 'black',
-        textShadowColor:'white',
-        textShadowOffset:{width: 1, height: 1},
-        textShadowRadius:10,
+        textShadowColor: 'white',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 10,
     },
     cuadrodescri: {
         height: '60%',
@@ -55,9 +55,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     description: {
-        fontSize: 15,
+        fontSize: 16,
         color: 'black',
-        textAlign: 'auto' ,
+        textAlign: 'auto',
         margin: 10,
     },
     text: {
